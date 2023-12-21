@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_elem_stack_a.c                                 :+:      :+:    :+:   */
+/*   ft_move_top_a.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 16:15:50 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/21 18:01:38 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/21 20:52:00 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	new_elem_stack_a(t_stacks *stacks, t_stack *head_b)
+void ft_move_top_a(t_stacks *stacks, t_stack *head_b)
 {
-	int	i;
-	int	size;
+	int	target_index;
+	int	stack_size;
+	int	target_value;
 
-	stacks->moves->ra = 0;
-	stacks->moves->rra = 0;
-	if (stacks->head_a->data != search_stack_a(stacks, head_b->data))
+	target_value = search_stack_a(stacks, head_b->data);
+	if (stacks->head_a->data != target_value)
 	{
-		i = find_index_stack_a(stacks, search_stack_a(stacks, head_b->data));
-		size = ft_listsize(stacks->head_a);
-		if (size % 2 == 0)
-		{
-			if (i + 1 > size / 2)
-				stacks->moves->rra = (size - i);
-			else
-				stacks->moves->ra = i;
-		}
+		target_index = find_index_stack_a(stacks, target_value);
+		stack_size = ft_listsize(stacks->head_a);
+
+		if ((stack_size % 2 == 0 && target_index + 1 > stack_size / 2) || (target_index > stack_size / 2))
+			stacks->moves->rra = stack_size - target_index;
 		else
-		{
-			if (i > size / 2)
-				stacks->moves->rra = (size - i);
-			else
-				stacks->moves->ra = i;
-		}
+			stacks->moves->ra = target_index;
 	}
 	do_moves_elem_stack_a(stacks);
 }

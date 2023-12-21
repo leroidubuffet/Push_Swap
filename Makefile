@@ -6,7 +6,7 @@
 #    By: airyago <airyago@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 10:33:46 by airyago           #+#    #+#              #
-#    Updated: 2023/12/21 20:32:31 by airyago          ###   ########.fr        #
+#    Updated: 2023/12/21 20:53:44 by airyago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,11 @@ NAME = push_swap
 NAME_BONUS = checker
 
 CC = cc
-FLAGS = -O3 -g3 -L$(LIBFT) -lft
+# FLAGS = -O3 -g3 -L$(LIBFT) -lft
+FLAGS = -O3 -g3
 CFLAGS = -Wall -Wextra -Werror -g
 
-LIBFT = ./libft
+# LIBFT = ./libft
 LIBS = /include
 
 RM = rm -f

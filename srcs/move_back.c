@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:53:24 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/21 20:40:37 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/21 20:53:03 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	move_stack_a(t_stacks *stacks)
 		if (stacks->head_b->data < stacks->values->min_a)
 			ft_rotate_min_a(stacks);
 		else if (stacks->head_b->data > stacks->values->max_a)
-			new_max_stack_a(stacks);
+			ft_rotate_max_a(stacks);
 		else
-			new_elem_stack_a(stacks, stacks->head_b);
+			ft_move_top_a(stacks, stacks->head_b);
 	}
 	ft_check_max_min_a(stacks);
 	put_in_order(stacks);
