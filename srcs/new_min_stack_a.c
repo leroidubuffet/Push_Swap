@@ -6,37 +6,26 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:44:31 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/21 18:01:38 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/21 20:40:58 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	new_min_stack_a(t_stacks *stacks)
+void	ft_rotate_min_a(t_stacks *stacks)
 {
-	int	i;
-	int	size;
+	int index;
+	int stack_size;
 
-	stacks->moves->ra = 0;
-	stacks->moves->rra = 0;
 	if (stacks->head_a->data != stacks->values->min_a)
 	{
-		i = find_index_stack_a(stacks, stacks->values->min_a);
-		size = ft_listsize(stacks->head_a);
-		if (size % 2 == 0)
-		{
-			if (i + 1 > size / 2)
-				stacks->moves->rra = (size - i);
-			else
-				stacks->moves->ra = i;
-		}
+		index = find_index_stack_a(stacks, stacks->values->min_a);
+		stack_size = ft_listsize(stacks->head_a);
+
+		if ((stack_size % 2 == 0 && index + 1 > stack_size / 2) || (index > stack_size / 2))
+			stacks->moves->rra = stack_size - index;
 		else
-		{
-			if (i > size / 2)
-				stacks->moves->rra = (size - i);
-			else
-				stacks->moves->ra = i;
-		}
+			stacks->moves->ra = index;
 	}
 	do_moves_min_stack_a(stacks);
 }
