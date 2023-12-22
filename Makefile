@@ -46,7 +46,8 @@ FILES = push_swap.c \
 		new_elem_stack_a.c \
 		new_in_stack_b.c \
 		ato_utils.c \
-		message_utils.c
+		message_utils.c \
+		utils.c
 
 FILES_BONUS = checker_bonus.c \
 			  ft_check_input_bonus.c \

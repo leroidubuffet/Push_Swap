@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/22 09:22:10 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/22 13:56:39 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,5 +175,8 @@ void		*ft_calloc(size_t count, size_t size);
 bool		ft_is_space(char c);
 bool		ft_is_digit(char c);
 void		ft_putstr(const char *str);
+void		*ft_calloc(size_t count, size_t size);
+void		ft_bzero(void *str, size_t len);
+size_t		ft_strlen(const char *s);
 
 #endif

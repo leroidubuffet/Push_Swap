@@ -80,7 +80,7 @@ void	ft_check_doubles(t_stack *head_a)
 		{
 			if (num == tmp->data)
 			{
-				ft_putstr_fd("Error\n", 2);
+				ft_putstr("Error\n");
 				ft_clearnodes(&head_a);
 				exit(0);
 			}
@@ -88,10 +88,4 @@ void	ft_check_doubles(t_stack *head_a)
 		}
 		ptr = ptr->next;
 	}
-}
-
-void	ft_error(void)
-{
-	write (STDERR_FILENO, "Error\n", 6);
-	exit(1);
 }
