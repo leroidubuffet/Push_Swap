@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/21 18:01:38 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/22 09:20:15 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ int					ft_printf(const char *str, ...);
 
 // printf_utils
 int					ft_putchar(char ch);
-int					ft_putstr(char *s);
 int					ft_putptr(unsigned long num, int i);
 int					convertions(const char *str, int i, va_list x);
 

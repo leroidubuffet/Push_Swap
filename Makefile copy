@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: airyago <airyago@student.42.fr>           +#+  +:+       +#+         #
+#    By: airyago <airyago@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 10:33:46 by airyago           #+#    #+#              #
-#    Updated: 2023/12/21 20:53:44 by airyago          ###   ########.fr        #
+#    Updated: 2023/12/21 20:55:30 by airyago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,10 @@ NAME = push_swap
 NAME_BONUS = checker
 
 CC = cc
-FLAGS = -O3 -g3
+FLAGS = -O3 -g3 -L$(LIBFT) -lft
 CFLAGS = -Wall -Wextra -Werror -g
 
+LIBFT = ./libft
 LIBS = /include
 
 RM = rm -f
@@ -44,9 +45,7 @@ FILES = push_swap.c \
 		new_min_stack_a.c \
 		new_max_stack_a.c \
 		new_elem_stack_a.c \
-		new_in_stack_b.c \
-		ato_utils.c \
-		message_utils.c
+		new_in_stack_b.c
 
 FILES_BONUS = checker_bonus.c \
 			  ft_check_input_bonus.c \
@@ -71,18 +70,28 @@ $(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -I.$(LIBS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) -O3 -g3 -o $(NAME)
+	make -C $(LIBFT)
+	$(CC) $(OBJS) $(CFLAGS) $(LIBFT)/libft.a -O3 -g3 -L$(LIBFT)  -lft -o $(NAME)
 
 bonus: $(NAME_BONUS)
 
 $(NAME_BONUS): $(OBJS_BONUS)
-	$(CC) $(OBJS_BONUS) $(CFLAGS) $(FLAGS) -o $(NAME_BONUS)
+	make -C $(LIBFT)
+	$(CC) $(OBJS_BONUS) $(CFLAGS) $(LIBFT)/libft.a $(FLAGS) -o $(NAME_BONUS)
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
 clean:
+	make clean -C $(LIBFT)
 	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	$(RM) $(NAME) $(NAM
+	make fclean -C $(LIBFT)
+	$(RM) $(NAME) $(NAME_BONUS)
+
+re: fclean all
+
+re_bonus: fclean bonus
+
+.PHONY: all clean fclean re bonus re_bonus

@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/21 20:53:03 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/22 09:22:10 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+# include <limits.h>
+# include <stdlib.h>
+# include <stdbool.h>
 
 # define INTMAX 2147483647
 # define INTMIN -2147483648
@@ -162,5 +165,15 @@ void		ft_error(void);
 
 // Free
 void		ft_free(t_stacks *stacks);
+
+int			ft_isdigit(int c);
+int			ft_atoi(const char *str);
+long		ft_atol(const char *str);
+
+void		*ft_memset(void *str, int c, size_t len);
+void		*ft_calloc(size_t count, size_t size);
+bool		ft_is_space(char c);
+bool		ft_is_digit(char c);
+void		ft_putstr(const char *str);
 
 #endif

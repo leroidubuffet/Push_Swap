@@ -6,13 +6,13 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 08:13:25 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/21 18:01:39 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/21 21:09:38 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_printf(const char *str, ...)
+int	ft_putstr(const char *str, ...)
 {
 	va_list	t_args;
 	int		str_len;

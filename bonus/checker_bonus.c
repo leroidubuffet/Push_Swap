@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 20:08:29 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/21 18:03:08 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/21 21:09:38 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	executing(t_stacks *stacks)
 		free(cmd);
 	}
 	if (ft_check_list_order(stacks) && ft_listsize_b(stacks->head_b) == 0)
-		ft_printf("OK\n");
+		ft_putstr("OK\n");
 	else
-		ft_printf("KO\n");
+		ft_putstr("KO\n");
 }
 
 int	main(int argc, char **argv)

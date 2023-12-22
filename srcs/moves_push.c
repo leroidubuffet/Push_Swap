@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 13:40:17 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/21 18:01:38 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/21 21:09:38 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_last_push_a(t_stacks *stacks)
 	stacks->head_a = (t_stack *)stacks->head_b;
 	stacks->head_a->next = tmp_node;
 	stacks->head_b = NULL;
-	ft_printf("pa\n");
+	ft_putstr("pa\n");
 }
 
 void	ft_push_empty_b(t_stacks *stacks)
@@ -51,7 +51,7 @@ void	ft_push_empty_b(t_stacks *stacks)
 	stacks->head_b = (t_stack *)stacks->head_a;
 	stacks->head_a = stacks->head_a->next;
 	stacks->head_b->next = NULL;
-	ft_printf("pb\n");
+	ft_putstr("pb\n");
 }
 
 void	ft_push_b(t_stacks *stacks)
@@ -62,7 +62,7 @@ void	ft_push_b(t_stacks *stacks)
 	stacks->head_b = (t_stack *)stacks->head_a;
 	stacks->head_a = stacks->head_a->next;
 	stacks->head_b->next = tmp_node;
-	ft_printf("pb\n");
+	ft_putstr("pb\n");
 }
 
 void	ft_push_a(t_stacks *stacks)
@@ -73,5 +73,5 @@ void	ft_push_a(t_stacks *stacks)
 	stacks->head_a = (t_stack *)stacks->head_b;
 	stacks->head_b = stacks->head_b->next;
 	stacks->head_a->next = tmp_node;
-	ft_printf("pa\n");
+	ft_putstr("pa\n");
 }
