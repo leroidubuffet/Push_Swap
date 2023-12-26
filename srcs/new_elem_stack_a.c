@@ -18,6 +18,8 @@ void ft_move_top_a(t_stacks *stacks, t_stack *head_b)
 	int	stack_size;
 	int	target_value;
 
+	stacks->moves->ra = 0;
+	stacks->moves->rra = 0;
 	target_value = search_stack_a(stacks, head_b->data);
 	if (stacks->head_a->data != target_value)
 	{
