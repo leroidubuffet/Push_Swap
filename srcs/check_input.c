@@ -33,7 +33,7 @@ void	ft_check_integers(int argc, char **argv)
 			ft_error();
 		while (j < (int)ft_strlen(argv[i]))
 		{
-			if (!ft_isdigit(argv[i][j]))
+			if (!ft_is_digit(argv[i][j]))
 			{
 				if (j == 0 && ft_strlen(argv[i]) != 1 && \
 					(argv[i][j] == '-' || argv[i][j] == '+'))
@@ -80,7 +80,7 @@ void	ft_check_doubles(t_stack *head_a)
 		{
 			if (num == tmp->data)
 			{
-				ft_putstr_fd("Error\n", 2);
+				ft_putstr("Error\n");
 				ft_clearnodes(&head_a);
 				exit(0);
 			}
@@ -90,8 +90,3 @@ void	ft_check_doubles(t_stack *head_a)
 	}
 }
 
-void	ft_error(void)
-{
-	write (STDERR_FILENO, "Error\n", 6);
-	exit(1);
-}

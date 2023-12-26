@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:34:22 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/21 18:01:38 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/26 18:42:44 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_rotate(t_stacks *stacks, char ch)
 			return ;
 		ft_rotate_a(stacks, stacks->head_a, 0);
 		ft_rotate_b(stacks, head_b, 0);
-		ft_printf("rr\n");
+		ft_putstr("rr\n");
 	}
 }
 
@@ -49,7 +49,7 @@ void	ft_rotate_a(t_stacks *stacks, t_stack *head_a, int print)
 	head_a->next = tmp_head;
 	tmp_head->next = NULL;
 	if (print != 0)
-		ft_printf("ra\n");
+		ft_putstr("ra\n");
 }
 
 void	ft_rotate_b(t_stacks *stacks, t_stack *head_b, int print)
@@ -63,7 +63,7 @@ void	ft_rotate_b(t_stacks *stacks, t_stack *head_b, int print)
 	head_b->next = tmp_head;
 	tmp_head->next = NULL;
 	if (print != 0)
-		ft_printf("rb\n");
+		ft_putstr("rb\n");
 }
 
 t_stack	*ft_listlast_a(t_stack *head_a)

@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:35:04 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/21 18:01:38 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/26 18:42:44 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_swap(t_stacks *stacks, char ch)
 			return ;
 		ft_swap_a(head_a, 0);
 		ft_swap_b(head_b, 0);
-		ft_printf("ss\n");
+		ft_putstr("ss\n");
 	}
 }
 
@@ -46,7 +46,7 @@ void	ft_swap_a(t_stack *head_a, int print)
 	head_a->data = head_a->next->data;
 	head_a->next->data = tmp;
 	if (print != 0)
-		ft_printf("sa\n");
+		ft_putstr("sa\n");
 }
 
 void	ft_swap_b(t_stack *head_b, int print)
@@ -57,5 +57,5 @@ void	ft_swap_b(t_stack *head_b, int print)
 	head_b->data = head_b->next->data;
 	head_b->next->data = tmp;
 	if (print != 0)
-		ft_printf("sb\n");
+		ft_putstr("sb\n");
 }

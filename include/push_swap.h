@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/26 18:26:20 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/26 18:43:13 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 # define INTMAX 2147483647
 # define INTMIN -2147483648
+
+# include <limits.h>
+# include <stdlib.h>
+# include <stdbool.h>
+# include <unistd.h>
 
 typedef struct t_stack
 {
@@ -162,5 +167,15 @@ void		ft_error(void);
 
 // Free
 void		ft_free(t_stacks *stacks);
+
+// Libft
+size_t		ft_strlen(const char *s);
+bool		ft_is_digit(char c);
+bool		ft_is_space(char c);
+long		ft_atol(const char *str);
+void		ft_putstr(const char *str);
+void		*ft_calloc(size_t count, size_t size);
+int			ft_atoi(const char *str);
+void		ft_bzero(void *str, size_t len);
 
 #endif
