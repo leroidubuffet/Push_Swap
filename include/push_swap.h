@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/26 18:45:52 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/26 18:58:05 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void		ft_identify_nums_three(t_stacks *stacks, int num1, int num2, int num3);
 
 // Sort
 void		ft_sort(t_stacks *stacks);
-void		move_stack_a(t_stacks *stacks);
+void		ft_reorder_a(t_stacks *stacks);
 
 // Moves Push
 void		ft_push(t_stacks *stacks, char ch);
@@ -140,12 +140,12 @@ void		ft_double_moves(t_stacks *stacks);
 void		ft_check_cost(t_stacks *stacks, int i);
 
 // Move Back to Stack A
-void		move_stack_a(t_stacks *stacks);
+void		ft_reorder_a(t_stacks *stacks);
 int			find_index_stack_a(t_stacks *stacks, int num);
 int			search_stack_a(t_stacks *stacks, int num);
 void		put_in_order(t_stacks *stacks);
 void		ft_rotate_min_a(t_stacks *stacks);
-void		new_max_stack_a(t_stacks *stacks);
+void		ft_rotate_max_a(t_stacks *stacks);
 void		new_elem_stack_a(t_stacks *stacks, t_stack *head_b);
 void		do_moves_min_stack_a(t_stacks *stacks);
 void		do_moves_max_stack_a(t_stacks *stacks);
@@ -153,14 +153,14 @@ void		do_moves_elem_stack_a(t_stacks *stacks);
 void		do_moves_order(t_stacks *stacks);
 
 // Check Max & Min B
-void		check_max_min_b(t_stacks *stacks);
-void		check_max_b(t_stacks *stacks, t_stack *head_b);
-void		check_min_b(t_stacks *stacks, t_stack *head_b);
+void		ft_check_limits_b(t_stacks *stacks);
+void		ft_check_max_b(t_stacks *stacks, t_stack *head_b);
+void		ft_check_min_b(t_stacks *stacks, t_stack *head_b);
 
 // Check Max & Min A
-void		check_max_min_a(t_stacks *stacks);
-void		check_max_a(t_stacks *stacks, t_stack *head_a);
-void		check_min_a(t_stacks *stacks, t_stack *head_a);
+void		ft_check_limits_a(t_stacks *stacks);
+void		ft_check_max_a(t_stacks *stacks, t_stack *head_a);
+void		ft_ft_check_min_b(t_stacks *stacks, t_stack *head_a);
 
 // Print
 void		ft_error(void);

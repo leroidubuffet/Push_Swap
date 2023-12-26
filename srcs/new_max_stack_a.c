@@ -6,37 +6,26 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:43:17 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/21 18:01:38 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/26 18:59:45 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	new_max_stack_a(t_stacks *stacks)
+void	ft_rotate_max_a(t_stacks *stacks)
 {
-	int	i;
-	int	size;
+	int	index;
+	int	stack_size;
 
-	stacks->moves->ra = 0;
-	stacks->moves->rra = 0;
 	if (ft_lstlast(stacks->head_a)->data != stacks->values->max_a)
 	{
-		i = find_index_stack_a(stacks, stacks->values->max_a);
-		size = ft_listsize(stacks->head_a);
-		if (size % 2 == 0)
-		{
-			if (i + 1 > size / 2)
-				stacks->moves->rra = (size - i) - 1;
-			else
-				stacks->moves->ra = i + 1;
-		}
+		index = find_index_stack_a(stacks, stacks->values->max_a);
+		stack_size = ft_listsize(stacks->head_a);
+
+		if ((stack_size % 2 == 0 && index + 1 > stack_size / 2) || (index > stack_size / 2))
+			stacks->moves->rra = stack_size - index - 1;
 		else
-		{
-			if (i > size / 2)
-				stacks->moves->rra = (size - i) - 1;
-			else
-				stacks->moves->ra = i + 1;
-		}
+			stacks->moves->ra = index + 1;
 	}
 	do_moves_max_stack_a(stacks);
 }

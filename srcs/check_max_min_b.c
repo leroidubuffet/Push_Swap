@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_max_min_b.c                                  :+:      :+:    :+:   */
+/*   ft_check_limits_b.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,16 +12,16 @@
 
 #include "push_swap.h"
 
-void	check_max_min_b(t_stacks *stacks)
+void	ft_check_limits_b(t_stacks *stacks)
 {
 	if (stacks->head_b != NULL)
 	{
-		check_max_b(stacks, stacks->head_b);
-		check_min_b(stacks, stacks->head_b);
+		ft_check_max_b(stacks, stacks->head_b);
+		ft_check_min_b(stacks, stacks->head_b);
 	}
 }
 
-void	check_min_b(t_stacks *stacks, t_stack *head_b)
+void	ft_check_min_b(t_stacks *stacks, t_stack *head_b)
 {
 	int	i;
 	int	size;
@@ -38,7 +38,7 @@ void	check_min_b(t_stacks *stacks, t_stack *head_b)
 	}
 }
 
-void	check_max_b(t_stacks *stacks, t_stack *head_b)
+void	ft_check_max_b(t_stacks *stacks, t_stack *head_b)
 {
 	int	i;
 	int	size;
