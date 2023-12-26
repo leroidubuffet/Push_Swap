@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:53:24 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/26 19:22:00 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/26 19:27:28 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_reorder_a(t_stacks *stacks)
 	ft_move_min_to_top_a(stacks);
 }
 
-void ft_move_min_to_top_a(t_stacks *stacks)
+void	ft_move_min_to_top_a(t_stacks *stacks)
 {
 	int min_index;
 	int stack_size;
@@ -37,12 +37,12 @@ void ft_move_min_to_top_a(t_stacks *stacks)
 	stacks->moves->rra = 0;
 	if (stacks->head_a->data == stacks->values->min_a)
 		return;
-	min_index = find_index_stack_a(stacks, stacks->values->min_a);
+	min_index = find_index(stacks, stacks->values->min_a);
 	stack_size = ft_listsize(stacks->head_a);
 	if ((stack_size % 2 == 0 && min_index + 1 > stack_size / 2) || (min_index > stack_size / 2))
-		stacks->moves->rra = stack_size - min_index; // Closer to the end; use reverse rotate.
+		stacks->moves->rra = stack_size - min_index;
 	else
-		stacks->moves->ra = min_index; // Closer to the start; use rotate.
+		stacks->moves->ra = min_index;
 	ft_apply_rotations_a(stacks);
 }
 
@@ -62,22 +62,24 @@ void	ft_apply_rotations_a(t_stacks *stacks)
 	}
 }
 
-
-int	find_index_stack_a(t_stacks *stacks, int num)
+int	find_index(t_stacks *stacks, int target_num)
 {
-	t_stack	*head_a;
-	int			size;
-	int			i;
+	t_stack	*current_node;
+	int 	index;
+	int 	stack_size;
 
-	i = 0;
-	head_a = stacks->head_a;
-	size = ft_listsize(stacks->head_a);
-	while (i < size)
+	if (stacks == NULL || stacks->head_a == NULL)
+		return (-1);
+	current_node = stacks->head_a;
+	index = 0;
+	stack_size = ft_listsize(stacks->head_a);
+	while (index < stack_size)
 	{
-		if (head_a->data ==num)
-			break ;
-		head_a = head_a->next;
-		i++;
+		if (current_node->data == target_num)
+			return (index);
+		current_node = current_node->next;
+		index++;
 	}
-	return (i);
+	return (-1);
 }
+
