@@ -1,89 +1,41 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: airyago <airyago@student.42.fr>           +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/12 10:33:46 by airyago           #+#    #+#              #
-#    Updated: 2023/12/21 20:53:44 by airyago          ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+# Compiler and flags
+CC = gcc
+CFLAGS = -Wall -Iinclude -Wextra -Werror -g -fsanitize=address
+DEPFLAGS = -MMD -MP
 
-vpath %.c srcs
-vpath %.c bonus
+# Source and object directories
+SRC_DIR = src
+INCLUDE_DIR = include
+OBJ_DIR = obj
+BIN_DIR = bin
 
-NAME = push_swap
-NAME_BONUS = checker
+# Automatically detect source files and corresponding object files
+SRCS = $(wildcard $(SRC_DIR)/*.c)
+OBJS = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
+DEPS = $(OBJS:.o=.d)
 
-CC = cc
-FLAGS = -O3 -g3
-CFLAGS = -Wall -Wextra -Werror -g
+# Name of the final executable
+TARGET = $(BIN_DIR)/push_swap
 
-LIBS = /include
+# Default target
+all: $(TARGET)
 
-RM = rm -f
-FILES = push_swap.c \
-		check_input.c \
-		linked_list_a.c \
-		sorting.c \
-		moves_swap.c \
-		check_list.c \
-		sort_four.c \
-		sort_three.c \
-		sort_two.c \
-		moves_rotate.c \
-		moves_rev_rotate.c \
-		moves_push.c \
-		find_best.c \
-		check_max_min_b.c \
-		check_max_min_a.c \
-		checks_best.c \
-		free_all.c \
-		move_back.c \
-		new_min_stack_a.c \
-		new_max_stack_a.c \
-		new_elem_stack_a.c \
-		new_in_stack_b.c \
-		ato_utils.c \
-		message_utils.c \
-		utils.c
+# Rule to make the target
+$(TARGET): $(OBJS)
+	@mkdir -p $(BIN_DIR)
+	$(CC) $(CFLAGS) $^ -o $@
 
-FILES_BONUS = checker_bonus.c \
-			  ft_check_input_bonus.c \
-			  linked_list_a_bonus.c \
-			  free_all_bonus.c \
-			  linked_list_b_bonus.c \
-			  moves_push_bonus.c \
-			  moves_rev_rotate_bonus.c \
-			  moves_rotate_bonus.c \
-			  moves_swap_bonus.c
-OBJ_DIR = build
+# Rule to make object files
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) $(DEPFLAGS) -c $< -o $@
 
-OBJS = $(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))
-OBJS_BONUS = $(addprefix $(OBJ_DIR)/, $(FILES_BONUS:.c=.o))
+# Include dependency files
+-include $(DEPS)
 
-green = \033[32m
-reset = \033[0m
-
-all: $(NAME)
-
-$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
-	@$(CC) $(CFLAGS) -I.$(LIBS) -c $< -o $@
-
-$(NAME): $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) -O3 -g3 -o $(NAME)
-
-bonus: $(NAME_BONUS)
-
-$(NAME_BONUS): $(OBJS_BONUS)
-	$(CC) $(OBJS_BONUS) $(CFLAGS) $(FLAGS) -o $(NAME_BONUS)
-
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-
+# Clean rule
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	rm -rf $(OBJ_DIR) $(BIN_DIR) $(DEPS)
 
-fclean: clean
-	$(RM) $(NAME) $(NAM
+# Mark 'all' and 'clean' as phony so make doesn't look for files named 'all' and 'clean'
+.PHONY: all clean
