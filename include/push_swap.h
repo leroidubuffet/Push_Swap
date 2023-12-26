@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/26 19:27:28 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/26 19:28:32 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ void		ft_run_moves(t_stacks *stacks);
 
 // Find best
 void		ft_update_stack_limits(t_stacks *stacks);
-int			ft_find_index(t_stacks *stacks, int num);
+int			ft_ft_find_index(t_stacks *stacks, int num);
 void		ft_calc_moves_to_top(t_stacks *stacks, t_stack *head_a, int i);
 void		ft_calc_move_new_num(t_stacks *stacks, int num);
 int			ft_find_destination(t_stacks *stacks, int num);
@@ -141,7 +141,7 @@ void		ft_check_cost(t_stacks *stacks, int i);
 
 // Move Back to Stack A
 void		ft_reorder_a(t_stacks *stacks);
-int			find_index(t_stacks *stacks, int num);
+int			ft_find_index(t_stacks *stacks, int num);
 int			search_stack_a(t_stacks *stacks, int num);
 void		ft_move_min_to_top_a(t_stacks *stacks);
 void		ft_rotate_min_a(t_stacks *stacks);

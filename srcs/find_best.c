@@ -76,7 +76,7 @@ int	ft_find_destination(t_stacks *stacks, int num)
 	return (num);
 }
 
-int	ft_find_index(t_stacks *stacks, int num)
+int	ft_ft_find_index(t_stacks *stacks, int num)
 {
 	t_stack	*head_b;
 	int			size;

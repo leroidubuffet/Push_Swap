@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:53:24 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/26 19:27:28 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/26 19:28:32 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_move_min_to_top_a(t_stacks *stacks)
 	stacks->moves->rra = 0;
 	if (stacks->head_a->data == stacks->values->min_a)
 		return;
-	min_index = find_index(stacks, stacks->values->min_a);
+	min_index = ft_find_index(stacks, stacks->values->min_a);
 	stack_size = ft_listsize(stacks->head_a);
 	if ((stack_size % 2 == 0 && min_index + 1 > stack_size / 2) || (min_index > stack_size / 2))
 		stacks->moves->rra = stack_size - min_index;
@@ -62,7 +62,7 @@ void	ft_apply_rotations_a(t_stacks *stacks)
 	}
 }
 
-int	find_index(t_stacks *stacks, int target_num)
+int	ft_find_index(t_stacks *stacks, int target_num)
 {
 	t_stack	*current_node;
 	int 	index;

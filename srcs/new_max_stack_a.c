@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:43:17 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/26 19:27:28 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/26 19:28:32 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_rotate_max_a(t_stacks *stacks)
 
 	if (ft_lstlast(stacks->head_a)->data != stacks->values->max_a)
 	{
-		index = find_index(stacks, stacks->values->max_a);
+		index = ft_find_index(stacks, stacks->values->max_a);
 		stack_size = ft_listsize(stacks->head_a);
 
 		if ((stack_size % 2 == 0 && index + 1 > stack_size / 2) || (index > stack_size / 2))
