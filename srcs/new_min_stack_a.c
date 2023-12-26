@@ -6,13 +6,13 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:44:31 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/21 18:01:38 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/26 18:45:52 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	new_min_stack_a(t_stacks *stacks)
+void	ft_rotate_min_a(t_stacks *stacks)
 {
 	int	i;
 	int	size;
