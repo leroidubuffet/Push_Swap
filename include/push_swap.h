@@ -6,14 +6,12 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/21 18:08:04 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/26 18:26:20 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
-# include "libft.h"
 
 # define INTMAX 2147483647
 # define INTMIN -2147483648
