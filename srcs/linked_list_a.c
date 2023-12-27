@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:57:07 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/21 18:01:38 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 07:52:51 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ t_stack	*ft_create_list(int argc, char **argv)
 
 t_stack	*ft_newnode(int data)
 {
-	t_stack	*ptr;
+	t_stack	*tmp;
 
-	ptr = (t_stack *)malloc(sizeof(t_stack));
-	if (!ptr)
+	tmp = (t_stack *)malloc(sizeof(t_stack));
+	if (!tmp)
 		return (NULL);
-	ptr->data = data;
-	ptr->next = NULL;
-	return (ptr);
+	tmp->data = data;
+	tmp->next = NULL;
+	return (tmp);
 }
 
 void	ft_clearnodes(t_stack **lst)

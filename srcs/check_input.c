@@ -15,7 +15,7 @@
 void	ft_check_input(int argc, char **argv)
 {
 	if (argc == 1)
-		exit(0);
+		exit (0);
 	ft_check_integers(argc, argv);
 	ft_check_int_size(argc, argv);
 }
@@ -89,4 +89,3 @@ void	ft_check_doubles(t_stack *head_a)
 		ptr = ptr->next;
 	}
 }
-
