@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_all.c                                         :+:      :+:    :+:   */
+/*   memory_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 14:59:02 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 20:04:24 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 20:29:06 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  *
  * @param stacks - Pointer to the structure containing stack and related data.
  */
-void ft_free(t_stacks *stacks)
+void	ft_free(t_stacks *stacks)
 {
 	if (!stacks)
 		return ;
@@ -31,7 +31,6 @@ void ft_free(t_stacks *stacks)
 		ft_clearnodes(&stacks->head_b);
 		stacks->head_b = NULL;
 	}
-
 	free(stacks->values);
 	stacks->values = NULL;
 	free(stacks->moves);
@@ -45,10 +44,57 @@ void ft_free(t_stacks *stacks)
  *
  * @param head - Pointer to the head of the stack to be cleared.
  */
-void ft_clear_and_exit(t_stack **head)
+void	ft_clear_and_exit(t_stack **head)
 {
 	if (head && *head)
 		ft_clearnodes(head);
 	exit (0);
 }
 
+/**
+ * Initializes the resources necessary for sorting operations.
+ *
+ * @param stacks - Container holding both stacks and related resources.
+ * @return true if initialization is successful, false otherwise.
+ */
+bool	ft_initialize_resources(t_stacks *stacks)
+{
+	stacks->moves = ft_calloc(1, sizeof(t_moves));
+	stacks->best = ft_calloc(1, sizeof(t_best));
+	stacks->values = ft_calloc(1, sizeof(t_values));
+	if (!stacks->moves || !stacks->best || !stacks->values)
+	{
+		if (stacks->moves)
+			free(stacks->moves);
+		if (stacks->best)
+			free(stacks->best);
+		if (stacks->values)
+			free(stacks->values);
+		return (false);
+	}
+	return (true);
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
+
+	if (size >= SIZE_MAX || count >= SIZE_MAX)
+		return (NULL);
+	ptr = (void *)malloc(count * size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, (count * size));
+	return (ptr);
+}
+
+void	ft_bzero(void *str, size_t len)
+{
+	unsigned char	*buf;
+
+	buf = str;
+	while (len--)
+	{
+		*buf++ = 0;
+	}
+}
