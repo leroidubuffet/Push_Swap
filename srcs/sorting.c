@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:59:54 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 20:15:37 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 20:25:33 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ void	ft_sort_two(t_stacks *stacks)
  * @param stacks - Container holding both stacks.
  * @param num1, num2, num3 - The three elements to sort.
  */
-static void	ft_sort_three_elements(t_stacks *stacks, int num1, int num2, int num3)
+static void	ft_sort_three_elements(t_stacks *stacks, int num1,
+	int num2, int num3)
 {
 	if (num1 > num2 && num1 < num3 && num2 < num3)
 		ft_swap(stacks, 'a');
@@ -90,12 +91,15 @@ static void	ft_sort_three_elements(t_stacks *stacks, int num1, int num2, int num
  * @param stacks - Container holding both stacks.
  * @param clear - Indicates whether nodes should be cleared.
  */
-void ft_sort_three(t_stacks *stacks, bool clear)
+void	ft_sort_three(t_stacks *stacks, bool clear)
 {
-	t_stack *head_a;
-	int num1, num2, num3;
+	t_stack	*head_a;
+	int		num1;
+	int		num2;
+	int		num3;
 
-	if (!stacks || !stacks->head_a || !stacks->head_a->next || !stacks->head_a->next->next)
+	if (!stacks || !stacks->head_a || !stacks->head_a->next
+		|| !stacks->head_a->next->next)
 		return ;
 	head_a = stacks->head_a;
 	num1 = head_a->data;
@@ -107,59 +111,24 @@ void ft_sort_three(t_stacks *stacks, bool clear)
 }
 
 /**
- * Initializes the resources necessary for sorting operations.
- *
- * @param stacks - Container holding both stacks and related resources.
- * @return true if initialization is successful, false otherwise.
- */
-static bool initialize_resources(t_stacks *stacks)
-{
-    stacks->moves = ft_calloc(1, sizeof(t_moves));
-    stacks->best = ft_calloc(1, sizeof(t_best));
-    stacks->values = ft_calloc(1, sizeof(t_values));
-
-    // Check if all allocations were successful.
-    if (!stacks->moves || !stacks->best || !stacks->values) {
-        // Handle failed allocation by freeing any successful allocations.
-        if (stacks->moves) free(stacks->moves);
-        if (stacks->best) free(stacks->best);
-        if (stacks->values) free(stacks->values);
-        return false;
-    }
-    return true;
-}
-
-/**
- * Sorts a stack with exactly four elements by pushing one element to another stack,
- * sorting the remaining three, and then reordering the stacks to achieve the sorted order.
+ * Sorts a stack with exactly four elements by pushing
+ * one element to another stack,
+ * sorting the remaining three, and then reordering the stacks
+ * to achieve the sorted order.
  *
  * @param stacks - Container holding both stacks and related resources.
  */
-void ft_sort_four(t_stacks *stacks)
+void	ft_sort_four(t_stacks *stacks)
 {
-    if (!stacks || ft_listsize(stacks->head_a) != 4) {
-        // Handle the error or unexpected situation when the stack doesn't have exactly four elements.
-        return;  // Early return if stacks is NULL or doesn't contain exactly four elements.
-    }
-
-    // Allocate and check memory for moves, best, and values.
-    if (!initialize_resources(stacks)) {
-        // Handle failed allocation.
-        ft_free(stacks);  // Clean up any allocated resources.
-        return;
-    }
-
-    // Move one element to another stack (presumably the smallest or largest, depending on your strategy).
-    ft_push(stacks, 'b');       // Move one element to stack_b.
-
-    // Sort the remaining three elements in stack_a.
-    ft_sort_three(stacks, false);   // false indicates nodes should not be cleared after sorting.
-
-    // Reorder elements to achieve overall sorted order.
-    ft_reorder_a(stacks);
-
-    // Clean up allocated resources after sorting is done.
-    ft_free(stacks);
+	if (!stacks || ft_listsize(stacks->head_a) != 4)
+		return ;
+	if (!ft_initialize_resources(stacks))
+	{
+		ft_free(stacks);
+		return ;
+	}
+	ft_push(stacks, 'b');
+	ft_sort_three(stacks, false);
+	ft_reorder_a(stacks);
+	ft_free(stacks);
 }
-
-
