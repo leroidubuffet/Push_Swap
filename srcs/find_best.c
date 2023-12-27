@@ -30,7 +30,7 @@ void	ft_move_best(t_stacks *stacks)
 		return ;
 	while (ft_listsize(stacks->head_a) != 3)
 	{
-		ft_check_limits_b(stacks);
+		ft_check_limits(stacks, 'b');
 		ft_check_moves(stacks);
 		ft_run_moves(stacks);
 	}

@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 20:50:06 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 23:23:24 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,15 +149,10 @@ void		do_moves_max_stack_a(t_stacks *stacks);
 void		do_moves_elem_stack_a(t_stacks *stacks);
 void		ft_apply_rotations_a(t_stacks *stacks);
 
-// Check Max & Min B
-void		ft_check_limits_b(t_stacks *stacks);
-void		ft_check_max_b(t_stacks *stacks, t_stack *head_b);
-void		ft_check_min_b(t_stacks *stacks, t_stack *head_b);
-
-// Check Max & Min A
-void		ft_check_limits_a(t_stacks *stacks);
-void		ft_check_max_a(t_stacks *stacks, t_stack *head_a);
-void		ft_check_min_a(t_stacks *stacks, t_stack *head_a);
+// Check limits
+void		ft_check_limits(t_stacks *stacks, char stack_identifier);
+void		ft_check_max(t_stack *head, int *max_value);
+void		ft_check_min(t_stack *head, int *max_value);
 
 // Print
 void		ft_error(void);
