@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:59:54 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 08:11:07 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 19:18:28 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,23 @@ void ft_sort(t_stacks *stacks)
 		ft_sort_three(stacks, 0);
 		ft_reorder_a(stacks);
 	}
+}
+
+void	ft_sort_four(t_stacks *stacks)
+{
+	struct t_moves	*moves;
+	struct t_best	*best;
+	t_values		*values;
+
+	moves = ft_calloc(1, sizeof(t_moves));
+	stacks->moves = moves;
+	best = ft_calloc(1, sizeof(t_best));
+	stacks->best = best;
+	values = ft_calloc(1, sizeof(t_values));
+	stacks->values = values;
+	ft_push(stacks, 'b');
+	ft_sort_three(stacks, 0);
+	ft_reorder_a(stacks);
+	ft_free(stacks);
+	exit(0);
 }
