@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:59:54 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 19:56:31 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 20:15:37 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,21 +106,60 @@ void ft_sort_three(t_stacks *stacks, bool clear)
 		ft_clear_and_exit(&stacks->head_a);
 }
 
-void	ft_sort_four(t_stacks *stacks)
+/**
+ * Initializes the resources necessary for sorting operations.
+ *
+ * @param stacks - Container holding both stacks and related resources.
+ * @return true if initialization is successful, false otherwise.
+ */
+static bool initialize_resources(t_stacks *stacks)
 {
-	struct t_moves	*moves;
-	struct t_best	*best;
-	t_values		*values;
+    stacks->moves = ft_calloc(1, sizeof(t_moves));
+    stacks->best = ft_calloc(1, sizeof(t_best));
+    stacks->values = ft_calloc(1, sizeof(t_values));
 
-	moves = ft_calloc(1, sizeof(t_moves));
-	stacks->moves = moves;
-	best = ft_calloc(1, sizeof(t_best));
-	stacks->best = best;
-	values = ft_calloc(1, sizeof(t_values));
-	stacks->values = values;
-	ft_push(stacks, 'b');
-	ft_sort_three(stacks, 0);
-	ft_reorder_a(stacks);
-	ft_free(stacks);
-	exit(0);
+    // Check if all allocations were successful.
+    if (!stacks->moves || !stacks->best || !stacks->values) {
+        // Handle failed allocation by freeing any successful allocations.
+        if (stacks->moves) free(stacks->moves);
+        if (stacks->best) free(stacks->best);
+        if (stacks->values) free(stacks->values);
+        return false;
+    }
+    return true;
 }
+
+/**
+ * Sorts a stack with exactly four elements by pushing one element to another stack,
+ * sorting the remaining three, and then reordering the stacks to achieve the sorted order.
+ *
+ * @param stacks - Container holding both stacks and related resources.
+ */
+void ft_sort_four(t_stacks *stacks)
+{
+    if (!stacks || ft_listsize(stacks->head_a) != 4) {
+        // Handle the error or unexpected situation when the stack doesn't have exactly four elements.
+        return;  // Early return if stacks is NULL or doesn't contain exactly four elements.
+    }
+
+    // Allocate and check memory for moves, best, and values.
+    if (!initialize_resources(stacks)) {
+        // Handle failed allocation.
+        ft_free(stacks);  // Clean up any allocated resources.
+        return;
+    }
+
+    // Move one element to another stack (presumably the smallest or largest, depending on your strategy).
+    ft_push(stacks, 'b');       // Move one element to stack_b.
+
+    // Sort the remaining three elements in stack_a.
+    ft_sort_three(stacks, false);   // false indicates nodes should not be cleared after sorting.
+
+    // Reorder elements to achieve overall sorted order.
+    ft_reorder_a(stacks);
+
+    // Clean up allocated resources after sorting is done.
+    ft_free(stacks);
+}
+
+
