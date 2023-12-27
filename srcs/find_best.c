@@ -80,21 +80,23 @@ int	ft_find_destination(t_stacks *stacks, int num)
 	return (num);
 }
 
-int	ft_find_index_b(t_stacks *stacks, int num)
+int	ft_find_index_b(t_stacks *stacks, int target_num)
 {
-	t_stack	*head_b;
+	t_stack	*current_node;
 	int		size;
-	int		i;
+	int		index;
 
-	i = 0;
-	head_b = stacks->head_b;
+	if (stacks == NULL || stacks->head_b == NULL)
+		return (-1);
+	current_node = stacks->head_b;
 	size = ft_listsize(stacks->head_b);
-	while (i < size)
+	index = 0;
+	while (index < size)
 	{
-		if (head_b->data == num)
+		if (current_node->data == target_num)
 			break ;
-		head_b = head_b->next;
-		i++;
+		current_node = current_node->next;
+		index++;
 	}
-	return (i);
+	return (index);
 }

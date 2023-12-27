@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:53:24 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 09:00:46 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 19:10:50 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,21 +65,22 @@ void	ft_apply_rotations_a(t_stacks *stacks)
 int	ft_find_index_a(t_stacks *stacks, int target_num)
 {
 	t_stack	*current_node;
-	int 	index;
-	int 	stack_size;
+	int		size;
+	int		index;
 
 	if (stacks == NULL || stacks->head_a == NULL)
 		return (-1);
 	current_node = stacks->head_a;
+	size = ft_listsize(stacks->head_a);
 	index = 0;
-	stack_size = ft_listsize(stacks->head_a);
-	while (index < stack_size)
+	while (index < size)
 	{
 		if (current_node->data == target_num)
-			return (index);
+			break ;
 		current_node = current_node->next;
 		index++;
 	}
-	return (-1);
+	return (index);
 }
+
 
