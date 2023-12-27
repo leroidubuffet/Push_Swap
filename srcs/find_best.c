@@ -12,18 +12,22 @@
 
 #include "push_swap.h"
 
-void	ft_move_best(t_stacks *stacks)
+/**
+ * Iteratively moves the best candidate element from stack_a to stack_b
+ * until only three elements are left in stack_a. Determines the best moves
+ * based on the current state and performs them.
+ *
+ * @param stacks - Container holding both stacks and metadata for moves.
+ */
+void ft_move_best(t_stacks *stacks)
 {
-	struct t_moves	*moves;
-	struct t_best	*best;
-	t_values		*values;
-
-	moves = ft_calloc(1, sizeof(t_moves));
-	stacks->moves = moves;
-	best = ft_calloc(1, sizeof(t_best));
-	stacks->best = best;
-	values = ft_calloc(1, sizeof(t_values));
-	stacks->values = values;
+	if (!stacks)
+		return;
+	stacks->moves = ft_calloc(1, sizeof(t_moves));
+	stacks->best = ft_calloc(1, sizeof(t_best));
+	stacks->values = ft_calloc(1, sizeof(t_values));
+	if (!stacks->moves || !stacks->best || !stacks->values)
+		return ;
 	while (ft_listsize(stacks->head_a) != 3)
 	{
 		ft_check_limits_b(stacks);
@@ -76,11 +80,11 @@ int	ft_find_destination(t_stacks *stacks, int num)
 	return (num);
 }
 
-int	ft_ft_find_index(t_stacks *stacks, int num)
+int	ft_find_index_b(t_stacks *stacks, int num)
 {
 	t_stack	*head_b;
-	int			size;
-	int			i;
+	int		size;
+	int		i;
 
 	i = 0;
 	head_b = stacks->head_b;
