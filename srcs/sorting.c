@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:59:54 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 19:34:16 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 19:56:31 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,11 @@ void	ft_sort(t_stacks *stacks)
 	}
 }
 
+/**
+ * Sorts a stack with exactly two elements by swapping them.
+ *
+ * @param stacks - Container holding both stacks.
+ */
 void	ft_sort_two(t_stacks *stacks)
 {
 	ft_swap(stacks, 'a');
@@ -54,34 +59,12 @@ void	ft_sort_two(t_stacks *stacks)
 }
 
 /**
- * Sorts a stack with exactly three elements.
+ * Sorts three elements of the stack by applying appropriate operations.
  *
  * @param stacks - Container holding both stacks.
- * @param flag - Indicates whether nodes should be cleared.
+ * @param num1, num2, num3 - The three elements to sort.
  */
-void	ft_sort_three(t_stacks *stacks, bool clear)
-{
-	t_stack	*head_a;
-	int		num1;
-	int		num2;
-	int		num3;
-
-	if (!stacks || !stacks->head_a || !stacks->head_a->next
-		|| !stacks->head_a->next->next)
-		return ;
-	head_a = stacks->head_a;
-	num1 = head_a->data;
-	num2 = head_a->next->data;
-	num3 = head_a->next->next->data;
-	ft_set_three(stacks, num1, num2, num3);
-	if (clear)
-	{
-		ft_clearnodes(&stacks->head_a);
-		exit(0);
-	}
-}
-
-void	ft_set_three(t_stacks *stacks, int num1, int num2, int num3)
+static void	ft_sort_three_elements(t_stacks *stacks, int num1, int num2, int num3)
 {
 	if (num1 > num2 && num1 < num3 && num2 < num3)
 		ft_swap(stacks, 'a');
@@ -99,6 +82,28 @@ void	ft_set_three(t_stacks *stacks, int num1, int num2, int num3)
 		ft_swap(stacks, 'a');
 		ft_rotate(stacks, 'a');
 	}
+}
+
+/**
+ * Sorts a stack with exactly three elements.
+ *
+ * @param stacks - Container holding both stacks.
+ * @param clear - Indicates whether nodes should be cleared.
+ */
+void ft_sort_three(t_stacks *stacks, bool clear)
+{
+	t_stack *head_a;
+	int num1, num2, num3;
+
+	if (!stacks || !stacks->head_a || !stacks->head_a->next || !stacks->head_a->next->next)
+		return ;
+	head_a = stacks->head_a;
+	num1 = head_a->data;
+	num2 = head_a->next->data;
+	num3 = head_a->next->next->data;
+	ft_sort_three_elements(stacks, num1, num2, num3);
+	if (clear)
+		ft_clear_and_exit(&stacks->head_a);
 }
 
 void	ft_sort_four(t_stacks *stacks)

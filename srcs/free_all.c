@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 14:59:02 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 19:42:11 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 19:51:03 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ void	ft_free(t_stacks *stacks)
 }
 
 /**
- * Clears nodes of stack_a and exits the program.
+ * Clears nodes of the given stack and exits the program.
  *
- * @param stacks - Container holding both stacks.
+ * @param head - Pointer to the head of the stack to be cleared.
  */
-void ft_clear_and_exit(t_stacks *stacks)
+void ft_clear_and_exit(t_stack **head)
 {
-	ft_clearnodes(&stacks->head_a);
-	exit(0);
+	if (head && *head)
+		ft_clearnodes(head);
+	exit (0);
 }
+

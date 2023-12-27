@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 19:28:43 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 19:57:17 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,18 +87,15 @@ void		ft_check_doubles(t_stack *head_a);
 // Linked lists
 t_stack		*ft_create_list(int argc, char **argv);
 t_stack		*ft_newnode(int data);
-void		ft_clearnodes(t_stack **lst);
 t_stack		*ft_lstlast(t_stack *head);
 int			ft_listsize(t_stack *head);
 bool		ft_check_list_order(t_stacks *stacks);
 
-// Sort Four & Three & Two
-void		ft_sort_four(t_stacks *stacks);
-void		ft_sort_three(t_stacks *stacks, bool clear);
-void		ft_sort_two(t_stacks *stacks);
-void		ft_set_three(t_stacks *stacks, int num1, int num2, int num3);
 
 // Sort
+void		ft_sort_two(t_stacks *stacks);
+void		ft_sort_three(t_stacks *stacks, bool clear);
+void		ft_sort_four(t_stacks *stacks);
 void		ft_sort(t_stacks *stacks);
 void		ft_reorder_a(t_stacks *stacks);
 
@@ -167,6 +164,8 @@ void		ft_error(void);
 
 // Free
 void		ft_free(t_stacks *stacks);
+void		ft_clear_and_exit(t_stack **head);
+void		ft_clearnodes(t_stack **lst);
 
 // Libft
 size_t		ft_strlen(const char *s);
