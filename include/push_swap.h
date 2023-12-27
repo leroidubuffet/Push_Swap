@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 19:57:17 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 20:50:06 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,15 +157,16 @@ void		ft_check_min_b(t_stacks *stacks, t_stack *head_b);
 // Check Max & Min A
 void		ft_check_limits_a(t_stacks *stacks);
 void		ft_check_max_a(t_stacks *stacks, t_stack *head_a);
-void		ft_ft_check_min_b(t_stacks *stacks, t_stack *head_a);
+void		ft_check_min_a(t_stacks *stacks, t_stack *head_a);
 
 // Print
 void		ft_error(void);
 
-// Free
+// Memory
 void		ft_free(t_stacks *stacks);
 void		ft_clear_and_exit(t_stack **head);
 void		ft_clearnodes(t_stack **lst);
+bool		ft_initialize_resources(t_stacks *stacks);
 
 // Libft
 size_t		ft_strlen(const char *s);
