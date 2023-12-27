@@ -68,7 +68,7 @@ void	ft_check_doubles(t_stack *head_a)
 {
 	t_stack	*tmp;
 	t_stack	*ptr;
-	int			num;
+	int		num;
 
 	ptr = head_a;
 	while (ptr != NULL)
