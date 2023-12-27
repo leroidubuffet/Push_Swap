@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 19:10:35 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 19:25:37 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ bool		ft_check_list_order(t_stacks *stacks);
 
 // Sort Four & Three & Two
 void		ft_sort_four(t_stacks *stacks);
-void		ft_sort_three(t_stacks *stacks, int flag);
+void		ft_sort_three(t_stacks *stacks, bool clear);
 void		ft_sort_two(t_stacks *stacks);
 void		ft_identify_nums_three(t_stacks *stacks, int num1, int num2, int num3);
 
