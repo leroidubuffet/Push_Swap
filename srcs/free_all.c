@@ -6,19 +6,38 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 14:59:02 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 19:51:03 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 20:04:24 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free(t_stacks *stacks)
+/**
+ * Frees all dynamically allocated resources within the stacks.
+ *
+ * @param stacks - Pointer to the structure containing stack and related data.
+ */
+void ft_free(t_stacks *stacks)
 {
-	ft_clearnodes(&stacks->head_a);
-	ft_clearnodes(&stacks->head_b);
+	if (!stacks)
+		return ;
+	if (stacks->head_a)
+	{
+		ft_clearnodes(&stacks->head_a);
+		stacks->head_a = NULL;
+	}
+	if (stacks->head_b)
+	{
+		ft_clearnodes(&stacks->head_b);
+		stacks->head_b = NULL;
+	}
+
 	free(stacks->values);
+	stacks->values = NULL;
 	free(stacks->moves);
+	stacks->moves = NULL;
 	free(stacks->best);
+	stacks->best = NULL;
 }
 
 /**
