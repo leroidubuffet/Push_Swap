@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/26 19:28:32 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 08:30:46 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,8 @@ void		ft_swap_b(t_stack *head_b, int print);
 
 // Moves Rotate
 void		ft_rotate(t_stacks *stacks, char ch);
-void		ft_rotate_a(t_stacks *stacks, t_stack *head_a, int print);
-void		ft_rotate_b(t_stacks *stacks, t_stack *head_b, int print);
+void		ft_rotate_a(t_stacks *stacks, int print);
+void		ft_rotate_b(t_stacks *stacks, int print);
 
 // Moves Rev Rotate
 void		ft_rev_rotate(t_stacks *stacks, char ch);
