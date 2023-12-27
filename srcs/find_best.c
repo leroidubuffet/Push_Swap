@@ -19,10 +19,10 @@
  *
  * @param stacks - Container holding both stacks and metadata for moves.
  */
-void ft_move_best(t_stacks *stacks)
+void	ft_move_best(t_stacks *stacks)
 {
 	if (!stacks)
-		return;
+		return ;
 	stacks->moves = ft_calloc(1, sizeof(t_moves));
 	stacks->best = ft_calloc(1, sizeof(t_best));
 	stacks->values = ft_calloc(1, sizeof(t_values));
@@ -57,9 +57,9 @@ void	ft_run_moves(t_stacks *stacks)
 int	ft_find_destination(t_stacks *stacks, int num)
 {
 	t_stack	*head_b;
-	int			size;
-	bool		flag;
-	int			i;
+	int		size;
+	bool	flag;
+	int		i;
 
 	i = 0;
 	flag = false;
