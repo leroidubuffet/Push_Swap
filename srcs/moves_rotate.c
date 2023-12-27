@@ -6,37 +6,35 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:34:22 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/26 18:42:44 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 08:17:05 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rotate(t_stacks *stacks, char ch)
+/**
+ * Rotates the specified stack(s) within the given t_stacks container.
+ * 'a' rotates stack_a, 'b' rotates stack_b, and 'r' rotates both stacks simultaneously.
+ *
+ * @param stacks The container holding the stacks.
+ * @param ch The character indicating which stack(s) to rotate: 'a', 'b', or 'r' for both.
+ */
+void ft_rotate(t_stacks *stacks, char ch)
 {
-	t_stack	*head_a;
-	t_stack	*head_b;
-
-	head_a = stacks->head_a;
-	head_b = stacks->head_b;
-	if (ch == 'a')
+	if (!stacks)
+		return ;
+	if (ch == 'a' && stacks->head_a && stacks->head_a->next)
 		ft_rotate_a(stacks, stacks->head_a, 1);
-	else if (ch == 'b')
+	else if (ch == 'b' && stacks->head_b && stacks->head_b->next)
+		ft_rotate_b(stacks, stacks->head_b, 1);
+	else if (ch == 'r' && stacks->head_a && stacks->head_a->next && stacks->head_b && stacks->head_b->next)
 	{
-		if (head_b == NULL || head_b->next == NULL)
-			return ;
-		ft_rotate_b(stacks, head_b, 1);
-	}
-	else
-	{
-		if (head_a == NULL || head_a->next == NULL || head_b == NULL
-			|| head_b->next == NULL)
-			return ;
 		ft_rotate_a(stacks, stacks->head_a, 0);
-		ft_rotate_b(stacks, head_b, 0);
+		ft_rotate_b(stacks, stacks->head_b, 0);
 		ft_putstr("rr\n");
 	}
 }
+
 
 void	ft_rotate_a(t_stacks *stacks, t_stack *head_a, int print)
 {
