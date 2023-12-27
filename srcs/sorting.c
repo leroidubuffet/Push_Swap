@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:59:54 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 19:29:22 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 19:34:16 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 /**
  * Sorts the elements in stack_a of the given t_stacks.
- * The function applies different sorting algorithms based on the number of elements.
- * For 2, 3, and 4 elements, specialized functions are used. For more elements, a general
- * sorting strategy is applied.
+ * The function applies different sorting algorithms based on
+ * the number of elements.
+ * For 2, 3, and 4 elements, specialized functions are used.
+ * For more elements, a general sorting strategy is applied.
  *
  * @param stacks The container holding the stacks to be sorted.
  */
-void ft_sort(t_stacks *stacks)
+void	ft_sort(t_stacks *stacks)
 {
 	int	size_a;
 
@@ -45,20 +46,28 @@ void ft_sort(t_stacks *stacks)
 	}
 }
 
+void	ft_sort_two(t_stacks *stacks)
+{
+	ft_swap(stacks, 'a');
+	ft_clearnodes(&stacks->head_a);
+	exit(0);
+}
+
 /**
  * Sorts a stack with exactly three elements.
  *
  * @param stacks - Container holding both stacks.
- * @param flag - Indicates whether additional action (currently unspecified) should be taken.
+ * @param flag - Indicates whether nodes should be cleared.
  */
 void	ft_sort_three(t_stacks *stacks, bool clear)
 {
 	t_stack	*head_a;
-	int			num1;
-	int			num2;
-	int			num3;
+	int		num1;
+	int		num2;
+	int		num3;
 
-	if (!stacks || !stacks->head_a || !stacks->head_a->next || !stacks->head_a->next->next)
+	if (!stacks || !stacks->head_a || !stacks->head_a->next
+		|| !stacks->head_a->next->next)
 		return ;
 	head_a = stacks->head_a;
 	num1 = head_a->data;
