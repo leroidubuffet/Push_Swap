@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 14:59:02 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 20:29:06 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 20:39:01 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,25 @@ bool	ft_initialize_resources(t_stacks *stacks)
 	return (true);
 }
 
+/**
+ * Allocates memory for an array of `count` elements of `size`
+ * bytes each and initializes all bytes to zero.
+ *
+ * @param count - Number of elements.
+ * @param size - Size of each element.
+ * @return A pointer to the allocated memory,
+ * or NULL if an error occurs.
+ */
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
-	if (size >= SIZE_MAX || count >= SIZE_MAX)
+	if ((size != 0 && count > SIZE_MAX / size))
 		return (NULL);
-	ptr = (void *)malloc(count * size);
+	ptr = malloc(count * size);
 	if (ptr == NULL)
 		return (NULL);
-	ft_bzero(ptr, (count * size));
+	ft_bzero(ptr, count * size);
 	return (ptr);
 }
 
