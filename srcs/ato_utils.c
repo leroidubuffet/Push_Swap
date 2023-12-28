@@ -6,11 +6,59 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 20:57:52 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/26 18:35:54 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 13:41:16 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// Whitepace skipper helper function
+void	ft_skip_whitespace(const char *str, int *i)
+{
+	while (ft_is_space(str[*i]))
+		(*i)++;
+}
+
+// Int overflow helper function
+bool	ft_check_overflow(long long result, char current_char, bool is_negative)
+{
+	long long	max_threshold;
+
+	max_threshold = LLONG_MAX / 10;
+	if (result > max_threshold)
+		return (true);
+	if (result == max_threshold)
+	{
+		if (is_negative && current_char - '0' == 8)
+			return (false);
+		if (current_char - '0' > 7)
+			return (true);
+	}
+	return (false);
+}
+
+// String to long long helper function
+long long	ft_str_to_ll(const char *str, int *index, bool *is_negative)
+{
+	long long	result;
+
+	result = 0;
+	while (str[*index] >= '0' && str[*index] <= '9')
+	{
+		if (ft_check_overflow(result, str[*index], *is_negative))
+		{
+			if (*is_negative)
+				return (LLONG_MIN);
+			else
+				return (LLONG_MAX);
+		}
+		result = result * 10 + (str[*index] - '0');
+		(*index)++;
+	}
+	if (*is_negative)
+		result = -result;
+	return (result);
+}
 
 int	ft_atoi(const char *str)
 {
@@ -64,15 +112,16 @@ long	ft_atol(const char *str)
 	return (result * sign);
 }
 
-bool	ft_is_space(char c)
+long long	ft_atoll(const char *str)
 {
-	return (c == ' ' || c == '\n' || c == '\t'
-		|| c == '\f' || c == '\r' || c == '\v');
+	int			i;
+	bool		is_negative;
+
+	i = 0;
+	is_negative = false;
+	ft_skip_whitespace(str, &i);
+	ft_check_sign(str, &i, &is_negative);
+	return (ft_str_to_ll(str, &i, &is_negative));
 }
 
-bool	ft_is_digit(char c)
-{
-	if (ft_is_space(c))
-		return (false);
-	return (c >= '0' && c <= '9');
-}
+

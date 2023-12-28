@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/12/28 12:51:10 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 13:39:06 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ typedef struct t_best
 }						t_best;
 
 // Error Checks
-void		ft_check_input(int argc, char **argv);
+bool		ft_check_input(int argc, char **argv);
 void		check_integers(int argc, char **argv);
 void		check_int_size(int argc, char **argv);
 void		ft_check_doubles(t_stack_a *head_a);
@@ -184,8 +184,19 @@ void		ft_free(t_stacks *stacks);
 bool	ft_is_space(char c);
 bool	ft_is_digit(char c);
 void	ft_putstr(const char *str);
-long	ft_atol(const char *str);
 int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
+long long	ft_atoll(const char *str);
+bool	ft_is_space(char c);
+bool	ft_fits_in_int(char *str);
+bool	ft_is_digit(char c);
+bool	ft_is_integer(char *str);
+void	ft_check_sign(const char *str, int *i, bool *is_negative);
+
+void		ft_error(void);
+void		ft_skip_whitespace(const char *str, int *i);
+long long	ft_str_to_ll(const char *str, int *index, bool *is_negative);
+bool		ft_check_overflow(long long result, char current_char, bool is_negative);
 
 // Memory
 void	*ft_calloc(size_t count, size_t size);
