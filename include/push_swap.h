@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 17:18:02 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 18:16:14 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,6 @@ void		move_stack_a(t_stacks *stacks);
 void		ft_push(t_stacks *stacks, char ch);
 void		ft_push_a(t_stacks *stacks);
 void		ft_push_b(t_stacks *stacks);
-void		ft_push_empty_b(t_stacks *stacks);
-void		ft_last_push_a(t_stacks *stacks);
 
 // Moves Swap
 void		ft_swap(t_stacks *stacks, char ch);
@@ -169,9 +167,6 @@ void		check_min_b(t_stacks *stacks, t_stack_b *head_b);
 void		check_max_min_a(t_stacks *stacks);
 void		check_max_a(t_stacks *stacks, t_stack_a *head_a);
 void		check_min_a(t_stacks *stacks, t_stack_a *head_a);
-
-// Print
-void		print_error_and_exit(void);
 
 // Lists Checks
 int			check_list_order(t_stacks *stacks);

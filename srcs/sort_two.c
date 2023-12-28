@@ -12,6 +12,11 @@
 
 #include "push_swap.h"
 
+/**
+ * Sorts a stack with exactly two elements by swapping them.
+ *
+ * @param stacks - Container holding both stacks.
+ */
 void	ft_sort_two(t_stacks *stacks)
 {
 	ft_swap(stacks, 'a');
