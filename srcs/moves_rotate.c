@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:34:22 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 19:03:28 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 19:57:16 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
  */
 t_stack_a *ft_listlast_a(t_stack_a *head_a)
 {
-    if (!head_a)
-        return (NULL);
-    while (head_a->next)
-        head_a = head_a->next;
-    return (head_a);
+	if (!head_a)
+		return (NULL);
+	while (head_a->next)
+		head_a = head_a->next;
+	return (head_a);
 }
 
 /**
@@ -35,11 +35,11 @@ t_stack_a *ft_listlast_a(t_stack_a *head_a)
  */
 static t_stack_b *ft_listlast_b(t_stack_b *head_b)
 {
-    if (!head_b)
-        return (NULL);
-    while (head_b->next)
-        head_b = head_b->next;
-    return (head_b);
+	if (!head_b)
+		return (NULL);
+	while (head_b->next)
+		head_b = head_b->next;
+	return (head_b);
 }
 
 /**
@@ -51,18 +51,18 @@ static t_stack_b *ft_listlast_b(t_stack_b *head_b)
  */
 static void ft_rotate_a(t_stacks *stacks, bool print)
 {
-    t_stack_a *tmp_head;
-    t_stack_a *last;
+	t_stack_a *tmp_head;
+	t_stack_a *last;
 
-    if (!stacks || !stacks->head_a || !stacks->head_a->next)
-        return;
-    tmp_head = stacks->head_a;
-    stacks->head_a = tmp_head->next;
-    last = ft_listlast_a(stacks->head_a);
-    last->next = tmp_head;
-    tmp_head->next = NULL;
-    if (print)
-        ft_putstr("ra\n");
+	if (!stacks || !stacks->head_a || !stacks->head_a->next)
+		return;
+	tmp_head = stacks->head_a;
+	stacks->head_a = tmp_head->next;
+	last = ft_listlast_a(stacks->head_a);
+	last->next = tmp_head;
+	tmp_head->next = NULL;
+	if (print)
+		ft_putstr("ra\n");
 }
 
 /**
@@ -74,18 +74,18 @@ static void ft_rotate_a(t_stacks *stacks, bool print)
  */
 static void ft_rotate_b(t_stacks *stacks, bool print)
 {
-    t_stack_b *tmp_head;
-    t_stack_b *last;
+	t_stack_b *tmp_head;
+	t_stack_b *last;
 
-    if (!stacks || !stacks->head_b || !stacks->head_b->next)
-        return;
-    tmp_head = stacks->head_b;
-    stacks->head_b = tmp_head->next;
-    last = ft_listlast_b(stacks->head_b);
-    last->next = tmp_head;
-    tmp_head->next = NULL;
-    if (print)
-        ft_putstr("rb\n");
+	if (!stacks || !stacks->head_b || !stacks->head_b->next)
+		return;
+	tmp_head = stacks->head_b;
+	stacks->head_b = tmp_head->next;
+	last = ft_listlast_b(stacks->head_b);
+	last->next = tmp_head;
+	tmp_head->next = NULL;
+	if (print)
+		ft_putstr("rb\n");
 }
 
 /**
@@ -97,14 +97,14 @@ static void ft_rotate_b(t_stacks *stacks, bool print)
  */
 void ft_rotate(t_stacks *stacks, char ch)
 {
-    if (ch == 'a' && stacks->head_a && stacks->head_a->next)
-        ft_rotate_a(stacks, true);
-    else if (ch == 'b' && stacks->head_b && stacks->head_b->next)
-        ft_rotate_b(stacks, true);
-    else if (ch == 'r' && stacks->head_a && stacks->head_a->next && stacks->head_b && stacks->head_b->next)
-    {
-        ft_rotate_a(stacks, false);
-        ft_rotate_b(stacks, false);
-        ft_putstr("rr\n");
-    }
+	if (ch == 'a' && stacks->head_a && stacks->head_a->next)
+		ft_rotate_a(stacks, true);
+	else if (ch == 'b' && stacks->head_b && stacks->head_b->next)
+		ft_rotate_b(stacks, true);
+	else if (ch == 'r' && stacks->head_a && stacks->head_a->next && stacks->head_b && stacks->head_b->next)
+	{
+		ft_rotate_a(stacks, false);
+		ft_rotate_b(stacks, false);
+		ft_putstr("rr\n");
+	}
 }
