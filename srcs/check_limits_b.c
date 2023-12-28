@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_max_min_b.c                                  :+:      :+:    :+:   */
+/*   ft_check_limits_b.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,16 +12,13 @@
 
 #include "push_swap.h"
 
-void	check_max_min_b(t_stacks *stacks)
-{
-	if (stacks->head_b != NULL)
-	{
-		check_max_b(stacks, stacks->head_b);
-		check_min_b(stacks, stacks->head_b);
-	}
-}
-
-void	check_min_b(t_stacks *stacks, t_stack_b *head_b)
+/**
+ * Finds and updates the minimum value in stack B.
+ *
+ * @param stacks - The container holding both stacks and their operational data.
+ * @param head_b - The head node of stack B.
+ */
+static void	check_min_b(t_stacks *stacks, t_stack_b *head_b)
 {
 	int	i;
 	int	size;
@@ -38,7 +35,13 @@ void	check_min_b(t_stacks *stacks, t_stack_b *head_b)
 	}
 }
 
-void	check_max_b(t_stacks *stacks, t_stack_b *head_b)
+/**
+ * Finds and updates the maximum value in stack B.
+ *
+ * @param stacks - The container holding both stacks and their operational data.
+ * @param head_b - The head node of stack B.
+ */
+static void	check_max_b(t_stacks *stacks, t_stack_b *head_b)
 {
 	int	i;
 	int	size;
@@ -52,5 +55,18 @@ void	check_max_b(t_stacks *stacks, t_stack_b *head_b)
 			stacks->values->max_b = head_b->content;
 		head_b = head_b->next;
 		i++;
+	}
+}
+/**
+ * Finds and updates the maximum and minimum values in stack A.
+ *
+ * @param stacks - The container holding both stacks.
+ */
+void	ft_check_limits_b(t_stacks *stacks)
+{
+	if (stacks->head_b != NULL)
+	{
+		check_max_b(stacks, stacks->head_b);
+		check_min_b(stacks, stacks->head_b);
 	}
 }

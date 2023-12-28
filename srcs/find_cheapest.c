@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 16:48:17 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 20:33:41 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	move_cheapest(t_stacks *stacks)
 	stacks->values = values;
 	while (ft_listsize_a(stacks->head_a) != 3)
 	{
-		check_max_min_b(stacks);
+		ft_check_limits_b(stacks);
 		check_moves(stacks);
 		do_cheap_moves(stacks);
 	}
