@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:43:17 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 19:29:39 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 19:33:43 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void ft_move_max_to_top(t_stacks *stacks)
  *
  * @param stacks - The container holding both stacks and their operational data.
  */
-void ft_calc_moves_max-top(t_stacks *stacks)
+void ft_calc_max_to_top(t_stacks *stacks)
 {
     int i;
     int size;
