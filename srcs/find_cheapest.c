@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 13:29:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/12/28 14:08:29 by airyago          ###   ########.fr       */
+/*   Created: 2023/08/23 13:29:24 by ybolivar          #+#    #+#             */
+/*   Updated: 2023/12/28 16:48:17 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ void	move_cheapest(t_stacks *stacks)
 {
 	t_moves	*moves;
 	t_best	*best;
-	t_values		*values;
+	t_limits		*values;
 
 	moves = ft_calloc(1, sizeof(t_moves));
 	stacks->moves = moves;
 	best = ft_calloc(1, sizeof(t_best));
 	stacks->best = best;
-	values = ft_calloc(1, sizeof(t_values));
+	values = ft_calloc(1, sizeof(t_limits));
 	stacks->values = values;
 	while (ft_listsize_a(stacks->head_a) != 3)
 	{

@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 14:59:02 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/28 12:38:42 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 16:48:17 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ bool	ft_initialize_resources(t_stacks *stacks)
 {
 	stacks->moves = ft_calloc(1, sizeof(t_moves));
 	stacks->best = ft_calloc(1, sizeof(t_best));
-	stacks->values = ft_calloc(1, sizeof(t_values));
+	stacks->values = ft_calloc(1, sizeof(t_limits));
 	if (!stacks->moves || !stacks->best || !stacks->values)
 	{
 		if (stacks->moves)
