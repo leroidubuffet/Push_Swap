@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:57:07 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 18:19:24 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 19:02:22 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,3 @@ int	ft_listsize_a(t_stack_a *head)
 	return (count);
 }
 
-t_stack_a	*ft_lstlast_a(t_stack_a *head_a)
-{
-	if (head_a == NULL)
-		return (NULL);
-	while (head_a->next != NULL)
-		head_a = head_a->next;
-	return (head_a);
-}

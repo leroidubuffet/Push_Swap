@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 18:31:20 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 19:03:09 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ t_stack_a	*ft_create_list(int argc, char **argv);
 t_stack_a	*ft_newnode_a(int content);
 void		ft_clearnodes_a(t_stack_a **lst);
 int			ft_listsize_a(t_stack_a *lst);
-t_stack_a	*ft_lstlast_a(t_stack_a *head_a);
+t_stack_a	*ft_listlast_a(t_stack_a *head_a);
 
 // Linked List B
 t_stack_b	*create_list_b(int argc, char **argv);
@@ -108,22 +108,18 @@ void		identify_nums_three(t_stacks *stacks, int num1, int num2, int num3);
 
 void		move_stack_a(t_stacks *stacks);
 
-// Moves Push
+// Push
 void		ft_push(t_stacks *stacks, char ch);
 void		ft_push_a(t_stacks *stacks);
 void		ft_push_b(t_stacks *stacks);
 
-// Moves Swap
+// Swap
 void		ft_swap(t_stacks *stacks, char ch);
-void		ft_swap_a(t_stack_a *head_a, bool print);
-void		ft_swap_b(t_stack_b *head_b, bool print);
 
-// Moves Rotate
+// Rotate
 void		ft_rotate(t_stacks *stacks, char ch);
-void		ft_rotate_a(t_stacks *stacks, t_stack_a *head_a, int print);
-void		ft_rotate_b(t_stacks *stacks, t_stack_b *head_b, int print);
 
-// Moves Rev Rotate
+// Rev Rotate
 void		ft_rev_rotate(t_stacks *stacks, char ch);
 void		ft_rev_rotate_a(t_stacks *stacks, t_stack_a *head_a, int print);
 void		ft_rev_rotate_b(t_stacks *stacks, t_stack_b *head_b, int print);

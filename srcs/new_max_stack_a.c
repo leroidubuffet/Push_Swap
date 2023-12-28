@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:43:17 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 16:48:17 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 19:03:12 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	new_max_stack_a(t_stacks *stacks)
 
 	stacks->moves->ra = 0;
 	stacks->moves->rra = 0;
-	if (ft_lstlast_a(stacks->head_a)->content != stacks->values->max_a)
+	if (ft_listlast_a(stacks->head_a)->content != stacks->values->max_a)
 	{
 		i = find_index_stack_a(stacks, stacks->values->max_a);
 		size = ft_listsize_a(stacks->head_a);
