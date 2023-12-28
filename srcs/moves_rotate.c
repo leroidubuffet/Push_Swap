@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:34:22 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 23:26:34 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/27 23:44:46 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void ft_rotate(t_stacks *stacks, char ch)
 		ft_putstr("rr\n");
 	}
 }
-
 
 void	ft_rotate_a(t_stacks *stacks, t_stack *head_a, int print)
 {

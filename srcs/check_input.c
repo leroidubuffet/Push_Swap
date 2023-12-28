@@ -12,6 +12,13 @@
 
 #include "push_swap.h"
 
+/**
+ * Entry point for validating command line arguments.
+ * Checks for the presence of arguments, validates integer format, and confirms within range.
+ *
+ * @param argc - Number of command line arguments.
+ * @param argv - Array of command line arguments.
+ */
 void	ft_check_input(int argc, char **argv)
 {
 	if (argc == 1)
@@ -20,6 +27,13 @@ void	ft_check_input(int argc, char **argv)
 	ft_check_int_size(argc, argv);
 }
 
+/**
+ * Validates that each command line argument is a valid integer string.
+ * Allows optional '+' or '-' sign at the start followed by digits.
+ *
+ * @param argc - Number of command line arguments.
+ * @param argv - Array of command line arguments.
+ */
 void	ft_check_integers(int argc, char **argv)
 {
 	int	i;
@@ -49,6 +63,13 @@ void	ft_check_integers(int argc, char **argv)
 	}
 }
 
+/**
+ * Validates that each argument is within the range of an int.
+ * Converts the argument to a long for safe comparison.
+ *
+ * @param argc - Number of command line arguments.
+ * @param argv - Array of command line arguments.
+ */
 void	ft_check_int_size(int argc, char **argv)
 {
 	long	num;
@@ -64,6 +85,12 @@ void	ft_check_int_size(int argc, char **argv)
 	}
 }
 
+/**
+ * Checks for duplicate values within the stack.
+ * If a duplicate is found, an error is printed, and the program exits.
+ *
+ * @param head - Head of the stack to be checked for duplicates.
+ */
 void	ft_check_doubles(t_stack *head_a)
 {
 	t_stack	*tmp;
