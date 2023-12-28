@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_four.c                                        :+:      :+:    :+:   */
+/*   ft_sort_four.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 16:19:43 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 16:48:17 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 17:17:43 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_four(t_stacks *stacks)
+void	ft_sort_four(t_stacks *stacks)
 {
 	t_moves		*moves;
 	t_best		*best;
@@ -25,7 +25,7 @@ void	sort_four(t_stacks *stacks)
 	values = ft_calloc(1, sizeof(t_limits));
 	stacks->values = values;
 	ft_push(stacks, 'b');
-	sort_three(stacks, 0);
+	ft_sort_three(stacks, 0);
 	move_stack_a(stacks);
 	ft_free(stacks);
 	exit(0);

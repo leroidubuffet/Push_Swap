@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/12/28 16:39:00 by airyago          ###   ########.fr       */
+/*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
+/*   Updated: 2023/12/28 17:18:02 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,14 +101,13 @@ t_stack_b	*ft_newnode_b(int content);
 void		ft_clearnodes_b(t_stack_b **lst);
 int			ft_listsize_b(t_stack_b *head);
 
-// Sort Four & Three & Two
-void		sort_four(t_stacks *stacks);
-void		sort_three(t_stacks *stacks, int flag);
-void		sort_two(t_stacks *stacks);
-void		identify_nums_three(t_stacks *stacks, int num1, int num2, int num3);
-
 // Sort
 void		ft_sort(t_stacks *stacks);
+void		ft_sort_two(t_stacks *stacks);
+void		ft_sort_three(t_stacks *stacks, int flag);
+void		ft_sort_four(t_stacks *stacks);
+void		identify_nums_three(t_stacks *stacks, int num1, int num2, int num3);
+
 void		move_stack_a(t_stacks *stacks);
 
 // Moves Push
