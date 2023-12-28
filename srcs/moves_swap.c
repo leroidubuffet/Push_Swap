@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:35:04 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 18:29:04 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 18:31:11 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@
 void ft_swap(t_stacks *stacks, char ch)
 {
 	if (ch == 'a')
-		ft_swap_a(stacks->head_a, 1);
+		ft_swap_a(stacks->head_a, true);
 	else if (ch == 'b' && stacks->head_b && stacks->head_b->next)
-		ft_swap_b(stacks->head_b, 1);
+		ft_swap_b(stacks->head_b, true);
 	else if (ch == 's' && stacks->head_a && stacks->head_a->next && stacks->head_b && stacks->head_b->next)
 	{
-		ft_swap_a(stacks->head_a, 0);
-		ft_swap_b(stacks->head_b, 0);
+		ft_swap_a(stacks->head_a, false);
+		ft_swap_b(stacks->head_b, false);
 		ft_putstr("ss\n");
 	}
 }
@@ -41,7 +41,7 @@ void ft_swap(t_stacks *stacks, char ch)
  * @param head_a - The top node of stack A.
  * @param print - Flag indicating whether to print the operation.
  */
-void ft_swap_a(t_stack_a *head_a, int print)
+void ft_swap_a(t_stack_a *head_a, bool print)
 {
 	int tmp;
 
@@ -63,7 +63,7 @@ void ft_swap_a(t_stack_a *head_a, int print)
  * @param head_b - The top node of stack B.
  * @param print - Flag indicating whether to print the operation.
  */
-void ft_swap_b(t_stack_b *head_b, int print)
+void ft_swap_b(t_stack_b *head_b, bool print)
 {
 	int tmp;
 

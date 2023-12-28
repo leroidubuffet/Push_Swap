@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 18:16:14 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 18:31:20 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,6 @@ typedef struct	s_stacks
 
 // Error Checks
 bool		ft_check_input(int argc, char **argv);
-void		check_integers(int argc, char **argv);
-void		check_int_size(int argc, char **argv);
 void		ft_check_doubles(t_stack_a *head_a);
 
 // Linked List A
@@ -117,8 +115,8 @@ void		ft_push_b(t_stacks *stacks);
 
 // Moves Swap
 void		ft_swap(t_stacks *stacks, char ch);
-void		ft_swap_a(t_stack_a *head_a, int print);
-void		ft_swap_b(t_stack_b *head_b, int print);
+void		ft_swap_a(t_stack_a *head_a, bool print);
+void		ft_swap_b(t_stack_b *head_b, bool print);
 
 // Moves Rotate
 void		ft_rotate(t_stacks *stacks, char ch);
