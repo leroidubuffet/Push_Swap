@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_cheapest.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/31 16:19:56 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:36:56 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	move_cheapest(t_stacks *stacks)
 {
 	struct t_moves	*moves;
-	struct t_cheap	*cheap;
+	struct t_best	*best;
 	t_values		*values;
 
 	moves = ft_calloc(1, sizeof(t_moves));
 	stacks->moves = moves;
-	cheap = ft_calloc(1, sizeof(t_cheap));
-	stacks->cheap = cheap;
+	best = ft_calloc(1, sizeof(t_best));
+	stacks->best = best;
 	values = ft_calloc(1, sizeof(t_values));
 	stacks->values = values;
 	while (ft_listsize_a(stacks->head_a) != 3)
@@ -34,19 +34,19 @@ void	move_cheapest(t_stacks *stacks)
 
 void	do_cheap_moves(t_stacks *stacks)
 {
-	while (stacks->cheap->ra-- != 0)
+	while (stacks->best->ra-- != 0)
 		ft_rotate(stacks, 'a');
-	while (stacks->cheap->rb-- != 0)
+	while (stacks->best->rb-- != 0)
 		ft_rotate(stacks, 'b');
-	while (stacks->cheap->rr-- != 0)
+	while (stacks->best->rr-- != 0)
 		ft_rotate(stacks, 'r');
-	while (stacks->cheap->rra-- != 0)
+	while (stacks->best->rra-- != 0)
 		ft_rev_rotate(stacks, 'a');
-	while (stacks->cheap->rrb-- != 0)
+	while (stacks->best->rrb-- != 0)
 		ft_rev_rotate(stacks, 'b');
-	while (stacks->cheap->rrr-- != 0)
+	while (stacks->best->rrr-- != 0)
 		ft_rev_rotate(stacks, 'r');
-	while (stacks->cheap->pb-- != 0)
+	while (stacks->best->pb-- != 0)
 		ft_push(stacks, 'b');
 }
 

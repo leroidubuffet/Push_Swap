@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:34:22 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/31 16:13:36 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:40:23 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_rotate(t_stacks *stacks, char ch)
 			return ;
 		ft_rotate_a(stacks, stacks->head_a, 0);
 		ft_rotate_b(stacks, head_b, 0);
-		ft_printf("rr\n");
+		ft_putstr("rr\n");
 	}
 }
 
@@ -49,7 +49,7 @@ void	ft_rotate_a(t_stacks *stacks, t_stack_a *head_a, int print)
 	head_a->next = tmp_head;
 	tmp_head->next = NULL;
 	if (print != 0)
-		ft_printf("ra\n");
+		ft_putstr("ra\n");
 }
 
 void	ft_rotate_b(t_stacks *stacks, t_stack_b *head_b, int print)
@@ -63,7 +63,7 @@ void	ft_rotate_b(t_stacks *stacks, t_stack_b *head_b, int print)
 	head_b->next = tmp_head;
 	tmp_head->next = NULL;
 	if (print != 0)
-		ft_printf("rb\n");
+		ft_putstr("rb\n");
 }
 
 t_stack_a	*ft_listlast_a(t_stack_a *head_a)

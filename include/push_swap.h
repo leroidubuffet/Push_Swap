@@ -3,20 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/09/02 22:08:07 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:37:55 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft.h"
-
 # define INTMAX 2147483647
 # define INTMIN -2147483648
+
+# include <limits.h>
+# include <stdlib.h>
+# include <stdbool.h>
+# include <unistd.h>
 
 typedef struct t_stack_a
 {
@@ -36,7 +39,7 @@ typedef struct t_stacks
 	struct t_stack_b	*head_b;
 	struct t_values		*values;
 	struct t_moves		*moves;
-	struct t_cheap		*cheap;
+	struct t_best		*best;
 }						t_stacks;
 
 typedef struct t_values
@@ -63,7 +66,7 @@ typedef struct t_moves
 	int					rrr;
 }						t_moves;
 
-typedef struct t_cheap
+typedef struct t_best
 {
 	int					cost;
 	int					sa;
@@ -77,7 +80,7 @@ typedef struct t_cheap
 	int					rra;
 	int					rrb;
 	int					rrr;
-}						t_cheap;
+}						t_best;
 
 // Error Checks
 void		input_error(int argc, char **argv);
@@ -176,5 +179,20 @@ int			check_list_order(t_stacks *stacks);
 
 // Free All
 void		free_for_all(t_stacks *stacks);
+
+// Libft
+bool	ft_is_space(char c);
+bool	ft_is_digit(char c);
+void	ft_putstr(const char *str);
+long	ft_atol(const char *str);
+int		ft_atoi(const char *str);
+
+// Memory
+void	*ft_calloc(size_t count, size_t size);
+bool	ft_initialize_resources(t_stacks *stacks);
+size_t	ft_strlen(const char *s);
+void	ft_bzero(void *str, size_t len);
+void	ft_clearnodes(t_stack_a **lst); // change to stack
+
 
 #endif

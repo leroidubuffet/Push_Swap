@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks_cheapest.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:18:11 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/31 16:19:23 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:36:56 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,16 @@ void	check_cost(t_stacks *stacks, int i)
 	stacks->moves->cost = stacks->moves->pb + stacks->moves->ra
 		+ stacks->moves->rb + stacks->moves->rr + stacks->moves->rra
 		+ stacks->moves->rrb + stacks->moves->rrr;
-	if (i == 1 || (stacks->cheap->cost > stacks->moves->cost))
+	if (i == 1 || (stacks->best->cost > stacks->moves->cost))
 	{
-		stacks->cheap->cost = stacks->moves->cost;
-		stacks->cheap->pb = stacks->moves->pb;
-		stacks->cheap->ra = stacks->moves->ra;
-		stacks->cheap->rb = stacks->moves->rb;
-		stacks->cheap->rr = stacks->moves->rr;
-		stacks->cheap->rra = stacks->moves->rra;
-		stacks->cheap->rrb = stacks->moves->rrb;
-		stacks->cheap->rrr = stacks->moves->rrr;
+		stacks->best->cost = stacks->moves->cost;
+		stacks->best->pb = stacks->moves->pb;
+		stacks->best->ra = stacks->moves->ra;
+		stacks->best->rb = stacks->moves->rb;
+		stacks->best->rr = stacks->moves->rr;
+		stacks->best->rra = stacks->moves->rra;
+		stacks->best->rrb = stacks->moves->rrb;
+		stacks->best->rrr = stacks->moves->rrr;
 	}
 }
 

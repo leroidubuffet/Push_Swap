@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 14:59:02 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/27 20:39:01 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 12:38:42 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,39 +17,39 @@
  *
  * @param stacks - Pointer to the structure containing stack and related data.
  */
-void	ft_free(t_stacks *stacks)
-{
-	if (!stacks)
-		return ;
-	if (stacks->head_a)
-	{
-		ft_clearnodes(&stacks->head_a);
-		stacks->head_a = NULL;
-	}
-	if (stacks->head_b)
-	{
-		ft_clearnodes(&stacks->head_b);
-		stacks->head_b = NULL;
-	}
-	free(stacks->values);
-	stacks->values = NULL;
-	free(stacks->moves);
-	stacks->moves = NULL;
-	free(stacks->best);
-	stacks->best = NULL;
-}
+// void	ft_free(t_stacks *stacks)
+// {
+// 	if (!stacks)
+// 		return ;
+// 	if (stacks->head_a)
+// 	{
+// 		ft_clearnodes(&stacks->head_a);
+// 		stacks->head_a = NULL;
+// 	}
+// 	if (stacks->head_b)
+// 	{
+// 		ft_clearnodes(&stacks->head_b);
+// 		stacks->head_b = NULL;
+// 	}
+// 	free(stacks->values);
+// 	stacks->values = NULL;
+// 	free(stacks->moves);
+// 	stacks->moves = NULL;
+// 	free(stacks->best);
+// 	stacks->best = NULL;
+// }
 
 /**
  * Clears nodes of the given stack and exits the program.
  *
  * @param head - Pointer to the head of the stack to be cleared.
  */
-void	ft_clear_and_exit(t_stack **head)
-{
-	if (head && *head)
-		ft_clearnodes(head);
-	exit (0);
-}
+// void	ft_clear_and_exit(t_stack **head)
+// {
+// 	if (head && *head)
+// 		ft_clearnodes(head);
+// 	exit (0);
+// }
 
 /**
  * Initializes the resources necessary for sorting operations.
@@ -106,4 +106,14 @@ void	ft_bzero(void *str, size_t len)
 	{
 		*buf++ = 0;
 	}
+}
+
+size_t	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_error_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 19:05:28 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/09/02 23:00:04 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:26:20 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	check_integers(int argc, char **argv)
 			print_error_and_exit_bonus();
 		while (j < (int)ft_strlen(argv[i]))
 		{
-			if (!ft_isdigit(argv[i][j]))
+			if (!ft_is_digit(argv[i][j]))
 			{
 				if (j == 0 && ft_strlen(argv[i]) != 1 && \
 					(argv[i][j] == '-' || argv[i][j] == '+'))
@@ -80,7 +80,7 @@ void	check_for_doubles(t_stack_a *head_a)
 		{
 			if (num == tmp->content)
 			{
-				ft_putstr_fd("Error\n", 2);
+				ft_putstr("Error\n");
 				ft_clearnodes_a(&head_a);
 				exit(0);
 			}

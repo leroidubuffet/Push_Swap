@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves_swap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:35:04 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/23 11:29:35 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:40:23 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_swap(t_stacks *stacks, char ch)
 			return ;
 		ft_swap_a(head_a, 0);
 		ft_swap_b(head_b, 0);
-		ft_printf("ss\n");
+		ft_putstr("ss\n");
 	}
 }
 
@@ -46,7 +46,7 @@ void	ft_swap_a(t_stack_a *head_a, int print)
 	head_a->content = head_a->next->content;
 	head_a->next->content = tmp;
 	if (print != 0)
-		ft_printf("sa\n");
+		ft_putstr("sa\n");
 }
 
 void	ft_swap_b(t_stack_b *head_b, int print)
@@ -57,5 +57,5 @@ void	ft_swap_b(t_stack_b *head_b, int print)
 	head_b->content = head_b->next->content;
 	head_b->next->content = tmp;
 	if (print != 0)
-		ft_printf("sb\n");
+		ft_putstr("sb\n");
 }

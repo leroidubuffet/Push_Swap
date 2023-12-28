@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_all_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 19:33:16 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/09/02 23:03:53 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:26:20 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	free_for_all_bonus(t_stacks *stacks)
 
 void	print_error_and_exit_bonus(void)
 {
-	ft_putstr_fd("Error\n", 2);
+	ft_putstr("Error\n");
 	exit(1);
 }
 

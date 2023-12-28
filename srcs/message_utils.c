@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_all.c                                         :+:      :+:    :+:   */
+/*   message_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 14:59:02 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/12/28 12:36:56 by airyago          ###   ########.fr       */
+/*   Created: 2023/04/08 13:03:28 by airyago           #+#    #+#             */
+/*   Updated: 2023/12/06 18:50:58 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_for_all(t_stacks *stacks)
+// Putstr helper function
+void	ft_putstr(const char *str)
 {
-	ft_clearnodes_a(&stacks->head_a);
-	ft_clearnodes_b(&stacks->head_b);
-	free(stacks->values);
-	free(stacks->moves);
-	free(stacks->best);
+	while (*str)
+		write (1, &(*str++), 1);
+}
+
+// Print error and exit
+void	ft_error(void)
+{
+	write (STDERR_FILENO, "Error\n", 6);
+	exit (1);
 }

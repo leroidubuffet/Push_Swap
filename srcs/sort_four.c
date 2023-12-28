@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_four.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 16:19:43 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/09/02 23:15:03 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:36:56 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	sort_four(t_stacks *stacks)
 {
 	struct t_moves	*moves;
-	struct t_cheap	*cheap;
+	struct t_best	*best;
 	t_values		*values;
 
 	moves = ft_calloc(1, sizeof(t_moves));
 	stacks->moves = moves;
-	cheap = ft_calloc(1, sizeof(t_cheap));
-	stacks->cheap = cheap;
+	best = ft_calloc(1, sizeof(t_best));
+	stacks->best = best;
 	values = ft_calloc(1, sizeof(t_values));
 	stacks->values = values;
 	ft_push(stacks, 'b');
