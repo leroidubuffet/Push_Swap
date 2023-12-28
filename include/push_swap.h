@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 20:20:19 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 20:26:40 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,6 @@ void		ft_sort_three(t_stacks *stacks, int flag);
 void		ft_sort_four(t_stacks *stacks);
 void		identify_nums_three(t_stacks *stacks, int num1, int num2, int num3);
 
-void		move_stack_a(t_stacks *stacks);
-
 // Push
 void		ft_push(t_stacks *stacks, char ch);
 void		ft_push_a(t_stacks *stacks);
@@ -136,15 +134,14 @@ void		ft_calc_move_new_num(t_stacks *stacks, int num);
 int			search_num_stack_b(t_stacks *stacks, int nbr);
 
 // Move Back to Stack A
-void		move_stack_a(t_stacks *stacks);
-int			find_index_stack_a(t_stacks *stacks, int nbr);
+void		ft_best_b_to_a(t_stacks *stacks);
+int			ft_find_index_stack_a(t_stacks *stacks, int nbr);
 int			search_stack_a(t_stacks *stacks, int nbr);
 void		put_in_order(t_stacks *stacks);
 void		ft_calc_min_to_top(t_stacks *stacks);
 void		ft_calc_max_to_top(t_stacks *stacks);
 void		new_elem_stack_a(t_stacks *stacks, t_stack_b *head_b);
 void		do_moves_elem_stack_a(t_stacks *stacks);
-void		do_moves_order(t_stacks *stacks);
 
 // Check Max & Min B
 void		check_max_min_b(t_stacks *stacks);

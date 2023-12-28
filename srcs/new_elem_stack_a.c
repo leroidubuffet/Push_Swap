@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 16:15:50 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 16:48:17 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 20:26:40 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	new_elem_stack_a(t_stacks *stacks, t_stack_b *head_b)
 	stacks->moves->rra = 0;
 	if (stacks->head_a->content != search_stack_a(stacks, head_b->content))
 	{
-		i = find_index_stack_a(stacks, search_stack_a(stacks, head_b->content));
+		i = ft_find_index_stack_a(stacks, search_stack_a(stacks, head_b->content));
 		size = ft_listsize_a(stacks->head_a);
 		if (size % 2 == 0)
 		{

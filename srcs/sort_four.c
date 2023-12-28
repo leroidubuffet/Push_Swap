@@ -26,7 +26,7 @@ void	ft_sort_four(t_stacks *stacks)
 	stacks->values = values;
 	ft_push(stacks, 'b');
 	ft_sort_three(stacks, 0);
-	move_stack_a(stacks);
+	ft_best_b_to_a(stacks);
 	ft_free(stacks);
 	exit(0);
 }

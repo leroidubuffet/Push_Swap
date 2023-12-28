@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_max_stack_a.c                                  :+:      :+:    :+:   */
+/*   limits_to_top.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:43:17 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 19:39:26 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 20:26:40 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void ft_calc_max_to_top(t_stacks *stacks)
     stacks->moves->rra = 0;
     if (ft_listlast_a(stacks->head_a)->content != stacks->values->max_a)
     {
-        i = find_index_stack_a(stacks, stacks->values->max_a);
+        i = ft_find_index_stack_a(stacks, stacks->values->max_a);
         size = ft_listsize_a(stacks->head_a);
 
         // Determine the most efficient direction to rotate.
@@ -119,7 +119,7 @@ void ft_calc_min_to_top(t_stacks *stacks)
     // Only proceed if the minimum element isn't already at the top of stack A.
     if (stacks->head_a->content != stacks->values->min_a)
     {
-        index = find_index_stack_a(stacks, stacks->values->min_a);
+        index = ft_find_index_stack_a(stacks, stacks->values->min_a);
         stack_size = ft_listsize_a(stacks->head_a);
 
         // Determine rotation direction based on the element's position.
