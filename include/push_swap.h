@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/12/28 13:39:06 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 14:10:48 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,36 +21,27 @@
 # include <stdbool.h>
 # include <unistd.h>
 
-typedef struct t_stack_a
+typedef struct	s_stack_a
 {
 	int					content;
-	struct t_stack_a	*next;
-}						t_stack_a;
+	struct s_stack_a	*next;
+} 				t_stack_a;
 
-typedef struct t_stack_b
+typedef struct	s_stack_b
 {
 	int					content;
-	struct t_stack_b	*next;
-}						t_stack_b;
+	struct s_stack_b	*next;
+}				t_stack_b;
 
-typedef struct t_stacks
-{
-	struct t_stack_a	*head_a;
-	struct t_stack_b	*head_b;
-	struct t_values		*values;
-	struct t_moves		*moves;
-	struct t_best		*best;
-}						t_stacks;
-
-typedef struct t_values
+typedef struct	s_values
 {
 	int					max_a;
 	int					min_a;
 	int					max_b;
 	int					min_b;
-}						t_values;
+}				t_values;
 
-typedef struct t_moves
+typedef struct	s_moves
 {
 	int					cost;
 	int					sa;
@@ -64,9 +55,9 @@ typedef struct t_moves
 	int					rra;
 	int					rrb;
 	int					rrr;
-}						t_moves;
+}				t_moves;
 
-typedef struct t_best
+typedef struct	s_best
 {
 	int					cost;
 	int					sa;
@@ -81,6 +72,15 @@ typedef struct t_best
 	int					rrb;
 	int					rrr;
 }						t_best;
+
+typedef struct	s_stacks
+{
+	struct s_stack_a	*head_a;
+	struct s_stack_b	*head_b;
+	struct s_values		*values;
+	struct s_moves		*moves;
+	struct s_best		*best;
+}				t_stacks;
 
 // Error Checks
 bool		ft_check_input(int argc, char **argv);

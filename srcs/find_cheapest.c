@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/12/28 12:36:56 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 14:08:29 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	move_cheapest(t_stacks *stacks)
 {
-	struct t_moves	*moves;
-	struct t_best	*best;
+	t_moves	*moves;
+	t_best	*best;
 	t_values		*values;
 
 	moves = ft_calloc(1, sizeof(t_moves));
