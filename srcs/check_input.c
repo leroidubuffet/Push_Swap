@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:29:09 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/28 18:17:14 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 19:45:10 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static bool	ft_is_valid_arg(char *argv)
 {
 	if (argv[0] == '\0')
-        return (false);
+		return (false);
 	if (!ft_is_integer(argv) \
 	|| !ft_fits_in_int(argv) || ft_is_space(*argv))
 	{

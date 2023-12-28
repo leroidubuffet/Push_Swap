@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 19:36:24 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 19:52:38 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,9 +156,7 @@ void		check_max_b(t_stacks *stacks, t_stack_b *head_b);
 void		check_min_b(t_stacks *stacks, t_stack_b *head_b);
 
 // Check Max & Min A
-void		check_max_min_a(t_stacks *stacks);
-void		check_max_a(t_stacks *stacks, t_stack_a *head_a);
-void		check_min_a(t_stacks *stacks, t_stack_a *head_a);
+void		ft_check_limits_a(t_stacks *stacks);
 
 // Lists Checks
 int			check_list_order(t_stacks *stacks);
