@@ -37,5 +37,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR) $(DEPS)
 
+# Full clean (clean + remove binary)
+fclean: clean
+	rm -f $(TARGET)
+
+# Rebuild (full clean + all)
+re: fclean all
+
 # Mark 'all' and 'clean' as phony so make doesn't look for files named 'all' and 'clean'
-.PHONY: all clean
+.PHONY: all clean fclean re
