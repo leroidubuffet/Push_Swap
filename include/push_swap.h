@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 19:52:38 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 20:08:08 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,17 +127,14 @@ void		ft_rev_rotate_b(t_stacks *stacks, t_stack_b *head_b, int print);
 // Move Cheapest
 void		move_cheapest(t_stacks *stacks);
 void		check_moves(t_stacks *stacks);
-void		new_max_or_min_stack_b(t_stacks *stacks);
 void		do_cheap_moves(t_stacks *stacks);
 
 // Find Cheapest
-void		new_max_or_min_stack_b(t_stacks *stacks);
+void		ft_update_stack_limits(t_stacks *stacks);
 int			find_index_stack_b(t_stacks *stacks, int nbr);
-void		get_top_stack_a(t_stacks *stacks, t_stack_a *head_a, int i);
-void		new_num_in_stack_b(t_stacks *stacks, int num);
+void		ft_calc_to_top(t_stacks *stacks, t_stack_a *head_a, int i);
+void		ft_calc_move_new_num(t_stacks *stacks, int num);
 int			search_num_stack_b(t_stacks *stacks, int nbr);
-void		check_double_moves(t_stacks *stacks);
-void		check_cost(t_stacks *stacks, int i);
 
 // Move Back to Stack A
 void		move_stack_a(t_stacks *stacks);

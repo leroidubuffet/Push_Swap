@@ -6,13 +6,13 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:15:41 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 16:48:17 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 20:06:43 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	new_max_or_min_stack_b(t_stacks *stacks)
+void	ft_update_stack_limits(t_stacks *stacks)
 {
 	int	i;
 	int	size;
@@ -39,7 +39,7 @@ void	new_max_or_min_stack_b(t_stacks *stacks)
 	}
 }
 
-void	new_num_in_stack_b(t_stacks *stacks, int num)
+void	ft_calc_move_new_num(t_stacks *stacks, int num)
 {
 	int	i;
 	int	size;
@@ -68,7 +68,7 @@ void	new_num_in_stack_b(t_stacks *stacks, int num)
 	}
 }
 
-void	get_top_stack_a(t_stacks *stacks, t_stack_a *head_a, int i)
+void	ft_calc_to_top(t_stacks *stacks, t_stack_a *head_a, int i)
 {
 	int	size;
 
