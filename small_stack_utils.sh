@@ -1,4 +1,5 @@
 #!/bin/bash
 
-NUMBERS=$(seq 0 99 | sort -R | tr '\n' ' ')
+NUMBERS=$(seq -999 999 | sort -R | tr '\n' ' ')
 ././bin/push_swap $NUMBERS
+# | ./checker_Mac $NUMBERS
