@@ -6,37 +6,11 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 12:38:22 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 20:00:23 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 20:20:20 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/**
- * Creates and returns a linked list from the given arguments.
- * Converts each argument into an integer and creates a new node in the list.
- *
- * @param argc - The number of arguments.
- * @param argv - Array of strings representing the arguments.
- * @return t_stack_a* - The head of the newly created linked list.
- */
-t_stack_b	*create_list_b(int argc, char **argv)
-{
-	int			i;
-	t_stack_b	*head_b;
-	t_stack_b	*tmp;
-
-	i = 1;
-	head_b = ft_newnode_b(ft_atoi(argv[i]));
-	tmp = head_b;
-	while (++i < argc)
-	{
-		tmp->next = ft_newnode_b(ft_atoi(argv[i]));
-		tmp = tmp->next;
-		tmp->next = NULL;
-	}
-	return (head_b);
-}
 
 /**
  * Allocates and returns a new node with the given content.

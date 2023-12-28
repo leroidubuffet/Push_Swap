@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 20:08:08 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 20:20:19 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ int			ft_listsize_a(t_stack_a *lst);
 t_stack_a	*ft_listlast_a(t_stack_a *head_a);
 
 // Linked List B
-t_stack_b	*create_list_b(int argc, char **argv);
 t_stack_b	*ft_newnode_b(int content);
 void		ft_clearnodes_b(t_stack_b **lst);
 int			ft_listsize_b(t_stack_b *head);
