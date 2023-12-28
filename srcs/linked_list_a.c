@@ -6,13 +6,13 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:57:07 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/12/28 12:47:22 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 16:13:53 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_a	*ft_create_list(int argc, char **argv)
+t_stack_a	*ft_create_list_a(int argc, char **argv)
 {
 	int			i;
 	t_stack_a	*head_a;

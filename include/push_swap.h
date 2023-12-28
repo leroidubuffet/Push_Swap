@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/12/28 14:10:48 by airyago          ###   ########.fr       */
+/*   Created: 2023/12/28 16:13:15 by airyago           #+#    #+#             */
+/*   Updated: 2023/12/28 16:13:49 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -20,6 +22,12 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <unistd.h>
+
+typedef struct	s_stack
+{
+	int					content;
+	struct s_stack_a	*next;
+} 				t_stack;
 
 typedef struct	s_stack_a
 {
@@ -89,7 +97,7 @@ void		check_int_size(int argc, char **argv);
 void		ft_check_doubles(t_stack_a *head_a);
 
 // Linked List A
-t_stack_a	*ft_create_list(int argc, char **argv);
+t_stack_a	*ft_create_list_a(int argc, char **argv);
 t_stack_a	*ft_newnode_a(int content);
 void		ft_clearnodes_a(t_stack_a **lst);
 int			ft_listsize_a(t_stack_a *lst);
