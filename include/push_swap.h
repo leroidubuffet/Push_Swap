@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 17:32:43 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 17:48:02 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,6 @@ void		ft_sort(t_stacks *stacks);
 void		ft_sort_two(t_stacks *stacks);
 void		ft_sort_three(t_stacks *stacks, bool clear);
 void		ft_sort_four(t_stacks *stacks);
-void		identify_nums_three(t_stacks *stacks, int num1, int num2, int num3);
 
 void		move_stack_a(t_stacks *stacks);
 
