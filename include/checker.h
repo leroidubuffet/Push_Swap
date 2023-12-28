@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/09/02 23:04:17 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:51:10 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,15 @@ typedef struct t_cheap
 	int					rrr;
 }						t_cheap;
 
-void					input_error(int argc, char **argv);
+void					ft_check_input(int argc, char **argv);
 void					check_integers(int argc, char **argv);
 void					check_int_size(int argc, char **argv);
-void					check_for_doubles(t_stack_a *head_a);
+void					ft_check_doubles(t_stack_a *head_a);
 void					ft_clearnodes_a(t_stack_a **lst);
 int						ft_listsize_b(t_stack_b *head);
 void					print_error_and_exit_bonus(void);
-t_stack_a				*create_list_a(int argc, char **argv);
-void					free_for_all_bonus(t_stacks *stacks);
+t_stack_a				*ft_create_list(int argc, char **argv);
+void					ft_free_bonus(t_stacks *stacks);
 int						check_list_order(t_stacks *stacks);
 void					free_and_exit(t_stacks *stacks, char *cmd);
 

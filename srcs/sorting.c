@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:59:54 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/09/02 16:22:46 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:49:04 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sorting(t_stacks *stacks)
+void	ft_sort(t_stacks *stacks)
 {
 	if (check_list_order(stacks))
 		return ;

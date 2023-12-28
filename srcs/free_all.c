@@ -6,13 +6,13 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 14:59:02 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/12/28 12:36:56 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 12:52:57 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_for_all(t_stacks *stacks)
+void	ft_free(t_stacks *stacks)
 {
 	ft_clearnodes_a(&stacks->head_a);
 	ft_clearnodes_b(&stacks->head_b);

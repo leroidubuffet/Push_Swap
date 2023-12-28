@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/12/28 12:37:55 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 12:51:10 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,13 @@ typedef struct t_best
 }						t_best;
 
 // Error Checks
-void		input_error(int argc, char **argv);
+void		ft_check_input(int argc, char **argv);
 void		check_integers(int argc, char **argv);
 void		check_int_size(int argc, char **argv);
-void		check_for_doubles(t_stack_a *head_a);
+void		ft_check_doubles(t_stack_a *head_a);
 
 // Linked List A
-t_stack_a	*create_list_a(int argc, char **argv);
+t_stack_a	*ft_create_list(int argc, char **argv);
 t_stack_a	*ft_newnode_a(int content);
 void		ft_clearnodes_a(t_stack_a **lst);
 int			ft_listsize_a(t_stack_a *lst);
@@ -108,7 +108,7 @@ void		sort_two(t_stacks *stacks);
 void		identify_nums_three(t_stacks *stacks, int num1, int num2, int num3);
 
 // Sort
-void		sorting(t_stacks *stacks);
+void		ft_sort(t_stacks *stacks);
 void		move_stack_a(t_stacks *stacks);
 
 // Moves Push
@@ -178,7 +178,7 @@ void		print_error_and_exit(void);
 int			check_list_order(t_stacks *stacks);
 
 // Free All
-void		free_for_all(t_stacks *stacks);
+void		ft_free(t_stacks *stacks);
 
 // Libft
 bool	ft_is_space(char c);

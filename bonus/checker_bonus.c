@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 20:08:29 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/12/28 12:40:23 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/28 12:51:10 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ int	main(int argc, char **argv)
 {
 	t_stacks	stacks;
 
-	input_error(argc, argv);
-	stacks.head_a = create_list_a(argc, argv);
+	ft_check_input(argc, argv);
+	stacks.head_a = ft_create_list(argc, argv);
 	stacks.head_b = NULL;
-	check_for_doubles(stacks.head_a);
+	ft_check_doubles(stacks.head_a);
 	executing(&stacks);
-	free_for_all_bonus(&stacks);
+	ft_free_bonus(&stacks);
 }

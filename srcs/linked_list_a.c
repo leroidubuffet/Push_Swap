@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   linked_list_a.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:57:07 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/30 15:12:02 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:47:22 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_a	*create_list_a(int argc, char **argv)
+t_stack_a	*ft_create_list(int argc, char **argv)
 {
 	int			i;
 	t_stack_a	*head_a;
@@ -68,7 +68,7 @@ int	ft_listsize_a(t_stack_a *head)
 }
 
 t_stack_a	*ft_lstlast_a(t_stack_a *head_a)
-{	
+{
 	if (head_a == NULL)
 		return (NULL);
 	while (head_a->next != NULL)

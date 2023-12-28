@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_error.c                                      :+:      :+:    :+:   */
+/*   ft_check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	input_error(int argc, char **argv)
+void	ft_check_input(int argc, char **argv)
 {
 	if (argc == 1)
 		exit(0);
@@ -64,7 +64,7 @@ void	check_int_size(int argc, char **argv)
 	}
 }
 
-void	check_for_doubles(t_stack_a *head_a)
+void	ft_check_doubles(t_stack_a *head_a)
 {
 	t_stack_a	*tmp;
 	t_stack_a	*ptr;
