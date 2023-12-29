@@ -36,5 +36,6 @@ void	ft_sort_four(t_stacks *stacks)
 	ft_sort_three(stacks, 0);
 	ft_best_b_to_a(stacks);
 	ft_free_stacks(stacks);
+	exit (0);
 }
 
