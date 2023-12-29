@@ -12,21 +12,30 @@
 
 #include "push_swap.h"
 
+/**
+ * Sorts a stack of exactly four elements.
+ * Pushes one element to stack B, sorts the remaining three elements in stack A,
+ * then calculates and executes the best sequence of moves to sort stack B
+ * and merge it back to stack A.
+ * Finally, frees the memory allocated for the stacks and exits the program.
+ *
+ * @param stacks - A pointer to the structure containing both stacks
+ * and their associated metadata.
+ */
 void	ft_sort_four(t_stacks *stacks)
 {
-	t_moves		*moves;
-	t_best		*best;
-	t_limits	*values;
-
-	moves = ft_calloc(1, sizeof(t_moves));
-	stacks->moves = moves;
-	best = ft_calloc(1, sizeof(t_best));
-	stacks->best = best;
-	values = ft_calloc(1, sizeof(t_limits));
-	stacks->values = values;
+	stacks->moves = ft_calloc(1, sizeof(t_moves));
+	stacks->best = ft_calloc(1, sizeof(t_best));
+	stacks->values = ft_calloc(1, sizeof(t_limits));
+	if (!stacks->moves || !stacks->best || !stacks->values)
+	{
+		ft_free_stacks(stacks);
+		exit(1);
+	}
 	ft_push(stacks, 'b');
 	ft_sort_three(stacks, 0);
 	ft_best_b_to_a(stacks);
 	ft_free_stacks(stacks);
 	exit(0);
 }
+
