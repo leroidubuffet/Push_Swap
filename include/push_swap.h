@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 20:33:44 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/29 12:33:56 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,7 @@ void		ft_check_limits_b(t_stacks *stacks);
 void		ft_check_limits_a(t_stacks *stacks);
 
 // Lists Checks
-int			check_list_order(t_stacks *stacks);
+bool		ft_check_order(t_stacks *stacks);
 
 // Free All
 void		ft_free(t_stacks *stacks);

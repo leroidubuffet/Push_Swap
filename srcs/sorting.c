@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:59:54 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 20:25:37 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/29 12:33:29 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@
  */
 void	ft_sort(t_stacks *stacks)
 {
-	if (check_list_order(stacks))
-		return ;
+	if (ft_check_order(stacks))
+	{
+		ft_clearnodes_a(&stacks->head_a);
+		exit (0);
+	}
 	if (ft_listsize_a(stacks->head_a) == 2)
 		ft_sort_two(stacks);
 	else if (ft_listsize_a(stacks->head_a) == 3)
