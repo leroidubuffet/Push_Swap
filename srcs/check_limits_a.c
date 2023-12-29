@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_max_min_a.c                                  :+:      :+:    :+:   */
+/*   check_limits_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 13:20:44 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 19:53:18 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/29 11:48:40 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,22 @@
  */
 static void check_max_a(t_stacks *stacks, t_stack_a *head_a)
 {
-    int index;
-    int stack_size;
+	int	index;
+	int	stack_size;
 
-    index = 0;
-    stack_size = ft_listsize_a(head_a);
-    stacks->values->max_a = head_a->content;
+	index = 0;
+	stack_size = ft_listsize_a(head_a);
+	stacks->values->max_a = head_a->content;
 
-    while (index < stack_size)
-    {
-        if (stacks->values->max_a < head_a->content)
-        {
-            stacks->values->max_a = head_a->content;
-        }
-        head_a = head_a->next;
-        index++;
-    }
+	while (index < stack_size)
+	{
+		if (stacks->values->max_a < head_a->content)
+		{
+			stacks->values->max_a = head_a->content;
+		}
+		head_a = head_a->next;
+		index++;
+	}
 }
 
 /**
@@ -46,22 +46,22 @@ static void check_max_a(t_stacks *stacks, t_stack_a *head_a)
  */
 static void check_min_a(t_stacks *stacks, t_stack_a *head_a)
 {
-    int index;
-    int stack_size;
+	int index;
+	int stack_size;
 
-    index = 0;
-    stack_size = ft_listsize_a(head_a);
-    stacks->values->min_a = head_a->content;
+	index = 0;
+	stack_size = ft_listsize_a(head_a);
+	stacks->values->min_a = head_a->content;
 
-    while (index < stack_size)
-    {
-        if (stacks->values->min_a > head_a->content)
-        {
-            stacks->values->min_a = head_a->content;
-        }
-        head_a = head_a->next;
-        index++;
-    }
+	while (index < stack_size)
+	{
+		if (stacks->values->min_a > head_a->content)
+		{
+			stacks->values->min_a = head_a->content;
+		}
+		head_a = head_a->next;
+		index++;
+	}
 }
 
 /**
@@ -71,6 +71,6 @@ static void check_min_a(t_stacks *stacks, t_stack_a *head_a)
  */
 void ft_check_limits_a(t_stacks *stacks)
 {
-    check_max_a(stacks, stacks->head_a);
-    check_min_a(stacks, stacks->head_a);
+	check_max_a(stacks, stacks->head_a);
+	check_min_a(stacks, stacks->head_a);
 }
