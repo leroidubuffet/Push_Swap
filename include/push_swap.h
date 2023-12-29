@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/29 13:14:38 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/29 14:22:21 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,12 +136,11 @@ int			search_num_stack_b(t_stacks *stacks, int nbr);
 // Move Back to Stack A
 void		ft_best_b_to_a(t_stacks *stacks);
 int			ft_find_index_stack_a(t_stacks *stacks, int nbr);
-int			search_stack_a(t_stacks *stacks, int nbr);
+int			ft_find_next_highest_in_a(t_stacks *stacks, int nbr);
 void		put_in_order(t_stacks *stacks);
 void		ft_calc_min_to_top(t_stacks *stacks);
 void		ft_calc_max_to_top(t_stacks *stacks);
-void		new_elem_stack_a(t_stacks *stacks, t_stack_b *head_b);
-void		do_moves_elem_stack_a(t_stacks *stacks);
+void		ft_place_element_a(t_stacks *stacks, t_stack_b *head_b);
 
 // Check Max & Min B
 void		ft_check_limits_b(t_stacks *stacks);
