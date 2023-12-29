@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/29 14:22:21 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/29 15:58:29 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,9 +122,8 @@ void		ft_rev_rotate_a(t_stacks *stacks, t_stack_a *head_a, int print);
 void		ft_rev_rotate_b(t_stacks *stacks, t_stack_b *head_b, int print);
 
 // Move Cheapest
-void		move_cheapest(t_stacks *stacks);
-void		check_moves(t_stacks *stacks);
-void		do_cheap_moves(t_stacks *stacks);
+void		ft_move_a_to_b(t_stacks *stacks);
+void		ft_find_best_sequence(t_stacks *stacks);
 
 // Find Cheapest
 void		ft_update_stack_limits(t_stacks *stacks);
