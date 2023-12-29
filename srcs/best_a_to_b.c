@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_cheapest.c                                    :+:      :+:    :+:   */
+/*   best_a_to_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/29 16:13:40 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/29 16:19:42 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	ft_move_a_to_b(t_stacks *stacks)
  * the contents of stack B.
  * @return - The next lower number found in stack B.
  */
-int	search_num_stack_b(t_stacks *stacks, int nbr)
+int	ft_search_num_b(t_stacks *stacks, int nbr)
 {
 	bool		flag;
 	t_stack_b	*head_b;
@@ -109,7 +109,7 @@ int	search_num_stack_b(t_stacks *stacks, int nbr)
  * @param nbr - The number to find within stack B.
  * @return - The index of the number in stack B, or -1 if not found.
  */
-int	find_index_stack_b(t_stacks *stacks, int nbr)
+int	ft_find_index_b(t_stacks *stacks, int nbr)
 {
 	int			index;
 	t_stack_b	*head_b;

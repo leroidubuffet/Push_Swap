@@ -6,13 +6,19 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:29:09 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/28 19:45:10 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/29 16:26:47 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Check argument validity
+/**
+ * Check argument validity.
+ * Checks for the empty arguments, validates integer format,
+ * checks integer size and the presence of spaces.
+ *
+ * @param argv - Array of command line arguments.
+ */
 static bool	ft_is_valid_arg(char *argv)
 {
 	if (argv[0] == '\0')
@@ -25,7 +31,13 @@ static bool	ft_is_valid_arg(char *argv)
 	return (true);
 }
 
-// Look for duplicates in input data
+/**
+ * Look for duplicates in input data.
+ *
+ * @param argv - Array of command line arguments.
+ * @param size - Argument count.
+ * @param size - Amount of arguments to check.
+ */
 static bool	ft_is_duplicate(char **argv, int size, int index)
 {
 	int	j;
@@ -47,21 +59,22 @@ static bool	ft_is_duplicate(char **argv, int size, int index)
  *
  * @param argc - Number of command line arguments.
  * @param argv - Array of command line arguments.
- */bool	ft_check_input(int argc, char **argv)
+ */
+bool	ft_check_input(int argc, char **argv)
 {
-	int	i;
+	int	index;
 
-	i = 1;
+	index = 1;
 	if (argc == 1)
 		return (false);
-	while (i < argc)
+	while (index < argc)
 	{
-		if (!ft_is_valid_arg(argv[i]) || ft_is_duplicate(argv, argc, i))
+		if (!ft_is_valid_arg(argv[index]) || ft_is_duplicate(argv, argc, index))
 		{
 			ft_error();
 			return (false);
 		}
-		i++;
+		index++;
 	}
 	return (true);
 }

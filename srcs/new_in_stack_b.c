@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:15:41 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 20:06:43 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/29 16:19:40 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_update_stack_limits(t_stacks *stacks)
 	stacks->moves->rrb = 0;
 	if (stacks->head_b->content == stacks->values->max_b)
 		return ;
-	i = find_index_stack_b(stacks, stacks->values->max_b);
+	i = ft_find_index_b(stacks, stacks->values->max_b);
 	size = ft_listsize_b(stacks->head_b);
 	if (size % 2 == 0)
 	{
@@ -47,10 +47,10 @@ void	ft_calc_move_new_num(t_stacks *stacks, int num)
 
 	stacks->moves->rb = 0;
 	stacks->moves->rrb = 0;
-	nbr = search_num_stack_b(stacks, num);
+	nbr = ft_search_num_b(stacks, num);
 	if (stacks->head_b->content == nbr)
 		return ;
-	i = find_index_stack_b(stacks, nbr);
+	i = ft_find_index_b(stacks, nbr);
 	size = ft_listsize_b(stacks->head_b);
 	if (size % 2 == 0)
 	{
