@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/29 16:19:40 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/29 16:32:08 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,8 +172,6 @@ bool		ft_check_overflow(long long result, char current_char, bool is_negative);
 // Memory
 void	*ft_calloc(size_t count, size_t size);
 bool	ft_initialize_resources(t_stacks *stacks);
-size_t	ft_strlen(const char *s);
-void	ft_bzero(void *str, size_t len);
 void	ft_clearnodes(t_stack_a **lst); // change to stack
 
 
