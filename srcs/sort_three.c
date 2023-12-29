@@ -1,39 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_three.c                                       :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 16:12:37 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 16:48:17 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/29 13:16:56 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_three(t_stacks *stacks, int flag)
+/**
+ * Sorts a stack of exactly three elements using the fewest
+ * possible operations.
+ *
+ * @param stacks - A pointer to the structure containing both stacks.
+ * @param clear - A flag indicating whether to clear the stack and
+ * exit after sorting.
+ */
+void	ft_sort_three(t_stacks *stacks, bool clear)
 {
-	t_stack_a	*head_a;
-	int			num1;
-	int			num2;
-	int			num3;
+	int	num1;
+	int	num2;
+	int	num3;
 
-	head_a = stacks->head_a;
-	num1 = head_a->content;
-	num2 = head_a->next->content;
-	num3 = head_a->next->next->content;
-	identify_nums_three(stacks, num1, num2, num3);
-	if (flag)
+	if (!stacks || !stacks->head_a || !stacks->head_a->next
+		|| !stacks->head_a->next->next)
+		return ;
+	num1 = stacks->head_a->content;
+	num2 = stacks->head_a->next->content;
+	num3 = stacks->head_a->next->next->content;
+	ft_execute_moves_three(stacks, num1, num2, num3);
+	if (clear)
 	{
 		ft_clearnodes_a(&stacks->head_a);
 		exit(0);
 	}
 }
 
-void	identify_nums_three(t_stacks *stacks, int num1, int num2, int num3)
+/**
+ * Executes the necessary moves to sort exactly three elements in a stack.
+ *
+ * @param stacks - A pointer to the structure containing both stacks.
+ * @param num1 - The top element of the stack.
+ * @param num2 - The middle element of the stack.
+ * @param num3 - The bottom element of the stack.
+ */
+void	ft_execute_moves_three(t_stacks *stacks, int num1, int num2, int num3)
 {
-	if (num1 > num2 && num1 < num3 && num2 < num3)
+	if (num1 > num2 && num2 < num3 && num1 < num3)
 		ft_swap(stacks, 'a');
 	else if (num1 > num2 && num1 > num3 && num2 < num3)
 		ft_rotate(stacks, 'a');
@@ -50,3 +67,4 @@ void	identify_nums_three(t_stacks *stacks, int num1, int num2, int num3)
 		ft_rotate(stacks, 'a');
 	}
 }
+

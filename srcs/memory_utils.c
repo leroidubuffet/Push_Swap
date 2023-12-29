@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 14:59:02 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/29 11:56:27 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/29 13:01:20 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  *
  * @param stacks - Pointer to the structure containing stack and related data.
  */
-// void	ft_free(t_stacks *stacks)
+// void	ft_free_stacks(t_stacks *stacks)
 // {
 // 	if (!stacks)
 // 		return ;

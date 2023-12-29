@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/29 12:33:56 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/29 13:14:38 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,9 @@ int			ft_listsize_b(t_stack_b *head);
 // Sort
 void		ft_sort(t_stacks *stacks);
 void		ft_sort_two(t_stacks *stacks);
-void		ft_sort_three(t_stacks *stacks, int flag);
+void		ft_sort_three(t_stacks *stacks, bool clear);
 void		ft_sort_four(t_stacks *stacks);
-void		identify_nums_three(t_stacks *stacks, int num1, int num2, int num3);
+void		ft_execute_moves_three(t_stacks *stacks, int num1, int num2, int num3);
 
 // Push
 void		ft_push(t_stacks *stacks, char ch);
@@ -149,11 +149,9 @@ void		ft_check_limits_b(t_stacks *stacks);
 // Check Max & Min A
 void		ft_check_limits_a(t_stacks *stacks);
 
-// Lists Checks
-bool		ft_check_order(t_stacks *stacks);
-
-// Free All
-void		ft_free(t_stacks *stacks);
+// Stacks
+void		ft_free_stacks(t_stacks *stacks);
+void		ft_initialize_stacks(t_stacks *stacks, int argc, char **argv);
 
 // Libft
 bool	ft_is_space(char c);

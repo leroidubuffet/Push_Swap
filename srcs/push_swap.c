@@ -6,18 +6,12 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:25:34 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/29 12:23:52 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/29 13:04:32 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_initialize_stacks(t_stacks *stacks, int argc, char **argv)
-{
-	stacks->head_a = ft_create_list(argc, argv);
-	stacks->head_b = NULL;
-
-}
 int	main(int argc, char **argv)
 {
 	t_stacks	stacks;
@@ -26,6 +20,6 @@ int	main(int argc, char **argv)
 		return (1);
 	ft_initialize_stacks(&stacks, argc, argv);
 	ft_sort(&stacks);
-	ft_free(&stacks);
+	ft_free_stacks(&stacks);
 	return (0);
 }
