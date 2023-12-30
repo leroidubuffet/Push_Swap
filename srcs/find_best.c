@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checks_cheapest.c                                  :+:      :+:    :+:   */
+/*   find_best.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:18:11 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 20:13:51 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 14:06:59 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static void ft_check_cost(t_stacks *stacks, int index)
  *
  * @param stacks - The container holding both stacks and their operational data.
  */
-void check_moves(t_stacks *stacks)
+void ft_find_best_sequence(t_stacks *stacks)
 {
 	int index;
 	int stack_size;

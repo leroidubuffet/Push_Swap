@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:59:54 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/29 13:14:53 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 13:54:57 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_sort(t_stacks *stacks)
 		ft_sort_four(stacks);
 	ft_push(stacks, 'b');
 	ft_push(stacks, 'b');
-	move_cheapest(stacks);
+	ft_move_a_to_b(stacks);
 	ft_sort_three(stacks, false);
 	ft_best_b_to_a(stacks);
 }
