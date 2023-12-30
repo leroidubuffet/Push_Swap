@@ -48,4 +48,12 @@
 - Use of `libft` is permitted.
 
 ## Testing
+I have leaned myself in the works of a fellow student, who developed a wonderful tool.
 https://github.com/gemartin99/Push-Swap-Tester
+
+## Lessons learned
+- Start testing earlier. I have lost several days of work because my tests were weak and did not find some major bugs
+- git branching. Branch early and branch often has proved as good advice as it seems
+- gi bisect. I did not know git had so many helpful features
+- using static when developing new functions is great to speed up things
+- Makefile can hold rules for your testing workflow as well
