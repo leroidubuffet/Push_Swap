@@ -6,50 +6,22 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 14:59:02 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/29 13:01:20 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 14:59:09 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/**
- * Frees all dynamically allocated resources within the stacks.
- *
- * @param stacks - Pointer to the structure containing stack and related data.
- */
-// void	ft_free_stacks(t_stacks *stacks)
-// {
-// 	if (!stacks)
-// 		return ;
-// 	if (stacks->head_a)
-// 	{
-// 		ft_clearnodes(&stacks->head_a);
-// 		stacks->head_a = NULL;
-// 	}
-// 	if (stacks->head_b)
-// 	{
-// 		ft_clearnodes(&stacks->head_b);
-// 		stacks->head_b = NULL;
-// 	}
-// 	free(stacks->values);
-// 	stacks->values = NULL;
-// 	free(stacks->moves);
-// 	stacks->moves = NULL;
-// 	free(stacks->best);
-// 	stacks->best = NULL;
-// }
+static void	ft_bzero(void *str, size_t len)
+{
+	unsigned char	*buf;
 
-/**
- * Clears nodes of the given stack and exits the program.
- *
- * @param head - Pointer to the head of the stack to be cleared.
- */
-// void	ft_clear_and_exit(t_stack **head)
-// {
-// 	if (head && *head)
-// 		ft_clearnodes(head);
-// 	exit (0);
-// }
+	buf = str;
+	while (len--)
+	{
+		*buf++ = 0;
+	}
+}
 
 /**
  * Initializes the resources necessary for sorting operations.
@@ -75,15 +47,6 @@ bool	ft_initialize_resources(t_stacks *stacks)
 	return (true);
 }
 
-/**
- * Allocates memory for an array of `count` elements of `size`
- * bytes each and initializes all bytes to zero.
- *
- * @param count - Number of elements.
- * @param size - Size of each element.
- * @return A pointer to the allocated memory,
- * or NULL if an error occurs.
- */
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
@@ -95,25 +58,4 @@ void	*ft_calloc(size_t count, size_t size)
 		return (NULL);
 	ft_bzero(ptr, count * size);
 	return (ptr);
-}
-
-void	ft_bzero(void *str, size_t len)
-{
-	unsigned char	*buf;
-
-	buf = str;
-	while (len--)
-	{
-		*buf++ = 0;
-	}
-}
-
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
 }
