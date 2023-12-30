@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:18:11 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/30 15:31:57 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 18:27:29 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  *
  * @param stacks - The container holding both stacks and their operational data.
  */
-static void ft_double_moves(t_stacks *stacks)
+static void	ft_double_moves(t_stacks *stacks)
 {
 	stacks->moves->rr = 0;
 	stacks->moves->rrr = 0;
@@ -43,7 +43,7 @@ static void ft_double_moves(t_stacks *stacks)
  * @param stacks - The container holding both stacks and their operational data.
  * @param index - The index of the current move in the iteration.
  */
-static void ft_check_cost(t_stacks *stacks, int index)
+static void	ft_check_cost(t_stacks *stacks, int index)
 {
 	stacks->moves->cost = stacks->moves->pb + stacks->moves->ra
 		+ stacks->moves->rb + stacks->moves->rr + stacks->moves->rra
@@ -67,11 +67,11 @@ static void ft_check_cost(t_stacks *stacks, int index)
  *
  * @param stacks - The container holding both stacks and their operational data.
  */
-void ft_find_best_sequence(t_stacks *stacks)
+void	ft_find_best_sequence(t_stacks *stacks)
 {
-	int index;
-	int stack_size;
-	t_stack_a *current_node;
+	int			index;
+	int			stack_size;
+	t_stack_a	*current_node;
 
 	current_node = stacks->head_a;
 	stack_size = ft_listsize_a(stacks->head_a);

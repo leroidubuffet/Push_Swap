@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/30 15:39:57 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 18:19:00 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ static void	ft_execute_sequence(t_stacks *stacks)
  */
 void	ft_move_a_to_b(t_stacks *stacks)
 {
-	t_moves	*moves;
-	t_best	*best;
-	t_limits		*values;
+	t_moves		*moves;
+	t_best		*best;
+	t_limits	*values;
 
 	moves = ft_calloc(1, sizeof(t_moves));
 	stacks->moves = moves;

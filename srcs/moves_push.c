@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 13:40:17 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 18:10:33 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 18:34:07 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,13 @@
  * stack A and stack B.
  * @param ch - A character indicating the target stack ('a' for stack A,
  * 'b' for stack B).
- */void ft_push(t_stacks *stacks, char ch)
- {
+ */
+void	ft_push(t_stacks *stacks, char ch)
+{
 	if (ch == 'a')
-		ft_push_a(stacks);  // Push from stack B to stack A.
+		ft_push_a(stacks);
 	else if (ch == 'b')
-		ft_push_b(stacks);  // Push from stack A to stack B.
+		ft_push_b(stacks);
 }
 
 /**
@@ -39,23 +40,20 @@
  *
  * @param stacks - A pointer to the struct containing both
  * stack A and stack B.
- */void ft_push_a(t_stacks *stacks) {
-	t_stack_a *new_head_a;
+ */
+void	ft_push_a(t_stacks *stacks)
+{
+	t_stack_a	*new_head_a;
+	t_stack_b	*old_head_b;
 
-	if (stacks->head_b == NULL) {
-		return; // Nothing to push if stack B is empty.
-	}
+	if (stacks->head_b == NULL)
+		return ;
 	new_head_a = ft_newnode_a(stacks->head_b->content);
-
-	// Adjust the next pointers.
 	new_head_a->next = stacks->head_a;
 	stacks->head_a = new_head_a;
-
-	// Remove the old head from stack B.
-	t_stack_b *old_head_b = stacks->head_b;
+	old_head_b = stacks->head_b;
 	stacks->head_b = stacks->head_b->next;
-	free(old_head_b);
-
+	free (old_head_b);
 	ft_putstr("pa\n");
 }
 
@@ -67,25 +65,19 @@
  * Records the operation by printing "pb".
  *
  * @param stacks - A pointer to the struct containing both stack A and stack B.
- */void ft_push_b(t_stacks *stacks) {
-	t_stack_b *new_head_b;
+ */
+void	ft_push_b(t_stacks *stacks)
+{
+	t_stack_b	*new_head_b;
+	t_stack_a	*old_head_a;
 
-	if (stacks->head_a == NULL) {
-		return; // Nothing to push if stack A is empty.
-	}
-
-	// Create a new head for stack B with the content of the old head of stack A.
+	if (stacks->head_a == NULL)
+		return ;
 	new_head_b = ft_newnode_b(stacks->head_a->content);
-
-	// Adjust the next pointers.
 	new_head_b->next = stacks->head_b;
 	stacks->head_b = new_head_b;
-
-	// Remove the old head from stack A.
-	t_stack_a *old_head_a = stacks->head_a;
+	old_head_a = stacks->head_a;
 	stacks->head_a = stacks->head_a->next;
-	free(old_head_a);
-
+	free (old_head_a);
 	ft_putstr("pb\n");
 }
-

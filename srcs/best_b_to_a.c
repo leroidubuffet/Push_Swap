@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:53:24 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/30 15:38:00 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 18:23:52 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  *
  * @param stacks - The container holding both stacks and their operational data.
  */
-static void ft_execute_moves(t_stacks *stacks)
+static void	ft_execute_moves(t_stacks *stacks)
 {
 	while (stacks->moves->ra > 0)
 	{
@@ -36,10 +36,10 @@ static void ft_execute_moves(t_stacks *stacks)
  *
  * @param stacks - The container holding both stacks and their operational data.
  */
-static void ft_min_to_top(t_stacks *stacks)
+static void	ft_min_to_top(t_stacks *stacks)
 {
-	int index;
-	int stack_size;
+	int	index;
+	int	stack_size;
 
 	stacks->moves->ra = 0;
 	stacks->moves->rra = 0;
@@ -85,18 +85,21 @@ void	ft_best_b_to_a(t_stacks *stacks)
  * @param nbr - The number to find within stack A.
  * @return The index of the number within stack A, or -1 if not found.
  */
-int ft_find_index_stack_a(t_stacks *stacks, int nbr)
+int	ft_find_index_stack_a(t_stacks *stacks, int nbr)
 {
-	t_stack_a *current_node;
-	int index;
-	int stack_size;
+	t_stack_a	*current_node;
+	int			index;
+	int			stack_size;
 
-	current_node = stacks->head_a;
 	stack_size = ft_listsize_a(stacks->head_a);
-	for (index = 0; index < stack_size; current_node = current_node->next, index++)
+	index = 0;
+	current_node = stacks->head_a;
+	while (index < stack_size)
 	{
 		if (current_node->content == nbr)
-			return index;
+			return (index);
+		current_node = current_node->next,
+		index++;
 	}
-	return -1;
+	return (-1);
 }

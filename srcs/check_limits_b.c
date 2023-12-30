@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_limits_b.c                                  :+:      :+:    :+:   */
+/*   check_limits_b.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 13:20:22 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 16:48:17 by airyago          ###   ########.fr       */
+/*   Created: 2023/12/30 18:26:13 by airyago           #+#    #+#             */
+/*   Updated: 2023/12/30 18:26:19 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ static void	check_max_b(t_stacks *stacks, t_stack_b *head_b)
 		i++;
 	}
 }
+
 /**
  * Finds and updates the maximum and minimum values in stack A.
  *

@@ -6,19 +6,20 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:43:17 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/30 14:56:31 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 18:29:05 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
- * Executes the calculated moves to bring the maximum value to the top of stack A.
- * Rotates or reverse rotates based on the previously calculated most efficient method.
+ * Executes the calculated moves to bring the maximum value to the top
+ * of stack A. Rotates or reverse rotates based on the previously calculated
+ * most efficient method.
  *
  * @param stacks - The container holding both stacks and their operational data.
  */
-static void ft_move_max_to_top(t_stacks *stacks)
+static void	ft_move_max_to_top(t_stacks *stacks)
 {
 	while (stacks->moves->ra > 0)
 	{
@@ -41,10 +42,10 @@ static void ft_move_max_to_top(t_stacks *stacks)
  *
  * @param stacks - The container holding both stacks and their operational data.
  */
-void ft_calc_max_to_top(t_stacks *stacks)
+void	ft_calc_max_to_top(t_stacks *stacks)
 {
-	int i;
-	int size;
+	int	i;
+	int	size;
 
 	stacks->moves->ra = 0;
 	stacks->moves->rra = 0;
@@ -76,9 +77,8 @@ void ft_calc_max_to_top(t_stacks *stacks)
  *
  * @param stacks - The container holding both stacks and their operational data.
  */
-static void ft_move_min_to_top(t_stacks *stacks)
+static void	ft_move_min_to_top(t_stacks *stacks)
 {
-	// Perform the rotations or reverse rotations as calculated.
 	while (stacks->moves->ra > 0)
 	{
 		ft_rotate(stacks, 'a');
@@ -98,7 +98,7 @@ static void ft_move_min_to_top(t_stacks *stacks)
  *
  * @param stacks - The container holding both stacks and their operational data.
  */
-void ft_calc_min_to_top(t_stacks *stacks)
+void	ft_calc_min_to_top(t_stacks *stacks)
 {
 	int	index;
 	int	stack_size;
@@ -109,8 +109,8 @@ void ft_calc_min_to_top(t_stacks *stacks)
 	{
 		index = ft_find_index_stack_a(stacks, stacks->values->min_a);
 		stack_size = ft_listsize_a(stacks->head_a);
-		if ((stack_size % 2 == 0 && index + 1 > stack_size / 2) ||
-			(index > stack_size / 2))
+		if ((stack_size % 2 == 0 && index + 1 > stack_size / 2)
+			|| (index > stack_size / 2))
 			stacks->moves->rra = stack_size - index;
 		else
 			stacks->moves->ra = index;

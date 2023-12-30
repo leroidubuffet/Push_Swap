@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 20:57:52 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/30 18:17:11 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 18:17:59 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,3 @@ long long	ft_str_to_ll(const char *str, int *index, bool *is_negative)
 		result = -result;
 	return (result);
 }
-

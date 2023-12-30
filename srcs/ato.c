@@ -6,11 +6,11 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 18:16:36 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/30 18:16:50 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 18:18:14 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 int	ft_atoi(const char *str)
 {
