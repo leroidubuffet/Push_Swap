@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_in_stack_b.c                                   :+:      :+:    :+:   */
+/*   new_elem_stack_b.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:15:41 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/30 15:31:57 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 18:45:23 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 /**
  * Updates the rotation counts needed to move the max value
@@ -25,11 +25,11 @@ void	ft_update_stack_limits(t_stacks *stacks)
 
 	if (stacks == NULL || stacks->head_b == NULL || stacks->moves == NULL
 		|| stacks->values == NULL)
-		return;
+		return ;
 	stacks->moves->rb = 0;
 	stacks->moves->rrb = 0;
 	if (stacks->head_b->content == stacks->values->max_b)
-		return;
+		return ;
 	i = ft_find_index_b(stacks, stacks->values->max_b);
 	size = ft_listsize_b(stacks->head_b);
 	half_size = size / 2;
@@ -53,12 +53,12 @@ void	ft_place_element_b(t_stacks *stacks, int num)
 	int	half_size;
 
 	if (stacks == NULL || stacks->head_b == NULL || stacks->moves == NULL)
-		return;
+		return ;
 	stacks->moves->rb = 0;
 	stacks->moves->rrb = 0;
 	nbr = ft_search_num_b(stacks, num);
 	if (stacks->head_b->content == nbr)
-		return;
+		return ;
 	i = ft_find_index_b(stacks, nbr);
 	size = ft_listsize_b(stacks->head_b);
 	half_size = size / 2;
@@ -77,16 +77,16 @@ void	ft_place_element_b(t_stacks *stacks, int num)
  */
 void	ft_calc_to_top(t_stacks *stacks, t_stack_a *head_a, int i)
 {
-	int size;
-	int half_size;
+	int	size;
+	int	half_size;
 
 	if (stacks == NULL || stacks->head_a == NULL || stacks->moves == NULL)
-		return;
+		return ;
 	stacks->moves->pb = 1;
 	stacks->moves->ra = 0;
 	stacks->moves->rra = 0;
 	if (stacks->head_a->content == head_a->content)
-		return;
+		return ;
 	size = ft_listsize_a(stacks->head_a);
 	half_size = size / 2;
 	if (i + 1 > half_size)
@@ -94,4 +94,3 @@ void	ft_calc_to_top(t_stacks *stacks, t_stack_a *head_a, int i)
 	else
 		stacks->moves->ra = i;
 }
-

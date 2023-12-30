@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:35:04 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/28 18:57:34 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 18:40:55 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
  * @param head_a - The top node of stack A.
  * @param print - Flag indicating whether to print the operation.
  */
-static void ft_swap_a(t_stack_a *head_a, bool print)
+static void	ft_swap_a(t_stack_a *head_a, bool print)
 {
-	int tmp;
+	int	tmp;
 
 	if (head_a && head_a->next)
 	{
@@ -42,9 +42,9 @@ static void ft_swap_a(t_stack_a *head_a, bool print)
  * @param head_b - The top node of stack B.
  * @param print - Flag indicating whether to print the operation.
  */
-static void ft_swap_b(t_stack_b *head_b, bool print)
+static void	ft_swap_b(t_stack_b *head_b, bool print)
 {
-	int tmp;
+	int	tmp;
 
 	if (head_b && head_b->next)
 	{
@@ -57,19 +57,22 @@ static void ft_swap_b(t_stack_b *head_b, bool print)
 }
 
 /**
- * Determines and executes the swap operation on the specified stack or both stacks simultaneously.
+ * Determines and executes the swap operation on the specified stack
+ * or both stacks simultaneously.
  * It swaps the first two elements at the top of the stack(s) if they exist.
  *
  * @param stacks - A pointer to the struct containing both stack A and stack B.
- * @param ch - A character indicating the target stack ('a' for stack A, 'b' for stack B, 's' for both stacks).
+ * @param ch - A character indicating the target stack ('a' for stack A, 'b'
+ * for stack B, 's' for both stacks).
  */
-void ft_swap(t_stacks *stacks, char ch)
+void	ft_swap(t_stacks *stacks, char ch)
 {
 	if (ch == 'a')
 		ft_swap_a(stacks->head_a, true);
 	else if (ch == 'b' && stacks->head_b && stacks->head_b->next)
 		ft_swap_b(stacks->head_b, true);
-	else if (ch == 's' && stacks->head_a && stacks->head_a->next && stacks->head_b && stacks->head_b->next)
+	else if (ch == 's' && stacks->head_a && stacks->head_a->next
+		&& stacks->head_b && stacks->head_b->next)
 	{
 		ft_swap_a(stacks->head_a, false);
 		ft_swap_b(stacks->head_b, false);
