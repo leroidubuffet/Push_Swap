@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/30 15:27:19 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 15:31:57 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ void		ft_find_best_sequence(t_stacks *stacks);
 void		ft_update_stack_limits(t_stacks *stacks);
 int			ft_find_index_b(t_stacks *stacks, int nbr);
 void		ft_calc_to_top(t_stacks *stacks, t_stack_a *head_a, int i);
-void		ft_calc_sequence_new(t_stacks *stacks, int num);
+void		ft_place_element_b(t_stacks *stacks, int num);
 int			ft_search_num_b(t_stacks *stacks, int nbr);
 
 // Move Back to Stack A

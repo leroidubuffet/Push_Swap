@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:53:24 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/29 14:21:45 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 15:38:00 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void ft_min_to_top(t_stacks *stacks)
  *
  * @param stacks - The container holding both stacks and their operational data.
  */
-void ft_best_b_to_a(t_stacks *stacks)
+void	ft_best_b_to_a(t_stacks *stacks)
 {
 	while (stacks->head_b != NULL)
 	{

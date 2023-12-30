@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:59:54 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/30 13:54:57 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 15:37:05 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * Checks if the elements in stack 'a' are in ascending order.
  *
  * @param stacks - The container holding both stacks.
- * @return Returns 1 if the stack is in order, 0 otherwise.
+ * @return Returns true if the stack is in order, false otherwise.
  */
 static bool ft_check_order(t_stacks *stacks)
 {
@@ -31,11 +31,11 @@ static bool ft_check_order(t_stacks *stacks)
 	while (current_node)
 	{
 		if (last_value > current_node->content)
-			return (0);
+			return (false);
 		last_value = current_node->content;
 		current_node = current_node->next;
 	}
-	return (1);
+	return (true);
 }
 
 /**

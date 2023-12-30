@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:18:11 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/30 15:27:19 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 15:31:57 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void ft_find_best_sequence(t_stacks *stacks)
 			current_node->content < stacks->values->min_b)
 			ft_update_stack_limits(stacks);
 		else
-			ft_calc_sequence_new(stacks, current_node->content);
+			ft_place_element_b(stacks, current_node->content);
 		ft_double_moves(stacks);
 		ft_check_cost(stacks, index);
 		current_node = current_node->next;
