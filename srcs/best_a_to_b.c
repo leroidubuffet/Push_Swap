@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_cheapest.c                                    :+:      :+:    :+:   */
+/*   best_a_to_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:29:24 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/30 14:07:29 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 14:36:25 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,16 @@ static void	ft_execute_sequence(t_stacks *stacks)
  */
 void	ft_move_a_to_b(t_stacks *stacks)
 {
-	if (!stacks)
-		return ;
-	stacks->moves = ft_calloc(1, sizeof(t_moves));
-	stacks->best = ft_calloc(1, sizeof(t_best));
-	stacks->values = ft_calloc(1, sizeof(t_limits));
-	if (!stacks->moves || !stacks->best || !stacks->values)
-		return ;
+	t_moves	*moves;
+	t_best	*best;
+	t_limits		*values;
+
+	moves = ft_calloc(1, sizeof(t_moves));
+	stacks->moves = moves;
+	best = ft_calloc(1, sizeof(t_best));
+	stacks->best = best;
+	values = ft_calloc(1, sizeof(t_limits));
+	stacks->values = values;
 	while (ft_listsize_a(stacks->head_a) != 3)
 	{
 		ft_check_limits_b(stacks);
@@ -75,28 +78,26 @@ void	ft_move_a_to_b(t_stacks *stacks)
  */
 int	ft_search_num_b(t_stacks *stacks, int nbr)
 {
-	bool		flag;
 	t_stack_b	*head_b;
-	int			i;
 	int			size;
+	int			flag;
+	int			i;
 
-	if (!stacks || !stacks->head_b)
-		return (nbr);
-	flag = false;
-	head_b = stacks->head_b;
 	i = 0;
+	flag = 0;
+	head_b = stacks->head_b;
 	size = ft_listsize_b(stacks->head_b);
-	while (!flag)
+	while (flag == 0)
 	{
+		i = 0;
 		nbr--;
-		while (i < size && !flag)
+		head_b = stacks->head_b;
+		while (i++ < size)
 		{
 			if (head_b->content == nbr)
-				flag = true;
-			i++;
+				flag = 1;
 			head_b = head_b->next;
 		}
-		head_b = stacks->head_b;
 	}
 	return (nbr);
 }
@@ -111,19 +112,19 @@ int	ft_search_num_b(t_stacks *stacks, int nbr)
  */
 int	ft_find_index_b(t_stacks *stacks, int nbr)
 {
-	int			index;
 	t_stack_b	*head_b;
+	int			size;
+	int			i;
 
-	index = 0;
+	i = 0;
 	head_b = stacks->head_b;
-	if (!stacks || !stacks->head_b)
-		return (-1);
-	while (head_b != NULL)
+	size = ft_listsize_b(stacks->head_b);
+	while (i < size)
 	{
 		if (head_b->content == nbr)
-			return (index);
+			break ;
 		head_b = head_b->next;
-		index++;
+		i++;
 	}
-	return (-1);
+	return (i);
 }
