@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 15:42:56 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/29 15:43:01 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 15:12:26 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ static void	ft_execute_rotations(t_stacks *stacks)
 }
 
 /**
- * Calculates the number of rotations and reverse rotations needed to move an element to the correct position in stack A.
+ * Calculates the number of rotations and reverse rotations needed to move
+ * an element to the correct position in stack A.
  *
  * @param stacks - The container holding both stack A and B.
  * @param index - The current index of the element to be moved.

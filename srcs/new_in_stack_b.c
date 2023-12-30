@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:15:41 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/30 15:09:54 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/30 15:30:33 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_update_stack_limits(t_stacks *stacks)
  * @param stacks - The container holding both stack A and stack B.
  * @param num - The number to be placed in stack B.
  */
-void	ft_calc_move_new_num(t_stacks *stacks, int num)
+void	ft_calc_sequence_new(t_stacks *stacks, int num)
 {
 	int	i;
 	int	size;
