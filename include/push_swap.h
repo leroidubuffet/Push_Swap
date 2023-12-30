@@ -5,48 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 11:12:03 by airyago           #+#    #+#             */
-/*   Updated: 2023/12/22 13:56:39 by airyago          ###   ########.fr       */
+/*   Created: 2023/05/01 11:12:03 by ybolivar          #+#    #+#             */
+/*   Updated: 2023/12/30 15:31:57 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft.h"
-# include <limits.h>
-# include <stdlib.h>
-# include <stdbool.h>
-
 # define INTMAX 2147483647
 # define INTMIN -2147483648
 
-typedef struct t_stack
-{
-	int					data;
-	struct t_stack		*next;
-}						t_stack;
+# include <limits.h>
+# include <stdlib.h>
+# include <stdbool.h>
+# include <unistd.h>
 
-typedef struct t_stacks
+typedef struct	s_stack_a
 {
-	struct t_stack		*head_a;
-	struct t_stack		*head_b;
-	struct t_values		*values;
-	struct t_moves		*moves;
-	struct t_best		*best;
-}						t_stacks;
+	int					content;
+	struct s_stack_a	*next;
+} 				t_stack_a;
 
-typedef struct t_values
+typedef struct	s_stack_b
+{
+	int					content;
+	struct s_stack_b	*next;
+}				t_stack_b;
+
+typedef struct	s_limits
 {
 	int					max_a;
 	int					min_a;
 	int					max_b;
 	int					min_b;
-	int					size_a;
-	int					size_b;
-}						t_values;
+}				t_limits;
 
-typedef struct t_moves
+typedef struct	s_moves
 {
 	int					cost;
 	int					sa;
@@ -60,9 +55,9 @@ typedef struct t_moves
 	int					rra;
 	int					rrb;
 	int					rrr;
-}						t_moves;
+}				t_moves;
 
-typedef struct t_best
+typedef struct	s_best
 {
 	int					cost;
 	int					sa;
@@ -78,105 +73,107 @@ typedef struct t_best
 	int					rrr;
 }						t_best;
 
+typedef struct	s_stacks
+{
+	struct s_stack_a	*head_a;
+	struct s_stack_b	*head_b;
+	struct s_limits		*values;
+	struct s_moves		*moves;
+	struct s_best		*best;
+}				t_stacks;
+
 // Error Checks
-void		ft_check_input(int argc, char **argv);
-void		ft_check_integers(int argc, char **argv);
-void		ft_check_int_size(int argc, char **argv);
-void		ft_check_doubles(t_stack *head_a);
+bool		ft_check_input(int argc, char **argv);
+void		ft_check_doubles(t_stack_a *head_a);
 
-// Linked lists
-t_stack		*ft_create_list(int argc, char **argv);
-t_stack		*ft_newnode(int data);
-void		ft_clearnodes(t_stack **lst);
-t_stack		*ft_lstlast(t_stack *head);
-int			ft_listsize(t_stack *head);
-bool		ft_check_list_order(t_stacks *stacks);
+// Linked List A
+t_stack_a	*ft_create_list(int argc, char **argv);
+t_stack_a	*ft_newnode_a(int content);
+void		ft_clearnodes_a(t_stack_a **lst);
+int			ft_listsize_a(t_stack_a *lst);
+t_stack_a	*ft_listlast_a(t_stack_a *head_a);
 
-// Sort Four & Three & Two
-void		ft_sort_four(t_stacks *stacks);
-void		ft_sort_three(t_stacks *stacks, int flag);
-void		ft_sort_two(t_stacks *stacks);
-void		ft_identify_nums_three(t_stacks *stacks, int num1, int num2, int num3);
+// Linked List B
+t_stack_b	*ft_newnode_b(int content);
+void		ft_clearnodes_b(t_stack_b **lst);
+int			ft_listsize_b(t_stack_b *head);
 
 // Sort
 void		ft_sort(t_stacks *stacks);
-void		move_stack_a(t_stacks *stacks);
+void		ft_sort_two(t_stacks *stacks);
+void		ft_sort_three(t_stacks *stacks, bool clear);
+void		ft_sort_four(t_stacks *stacks);
+void		ft_execute_moves_three(t_stacks *stacks, int num1, int num2, int num3);
 
-// Moves Push
+// Push
 void		ft_push(t_stacks *stacks, char ch);
 void		ft_push_a(t_stacks *stacks);
 void		ft_push_b(t_stacks *stacks);
-void		ft_push_empty_b(t_stacks *stacks);
-void		ft_last_push_a(t_stacks *stacks);
 
-// Moves Swap
+// Swap
 void		ft_swap(t_stacks *stacks, char ch);
-void		ft_swap_a(t_stack *head_a, int print);
-void		ft_swap_b(t_stack *head_b, int print);
 
-// Moves Rotate
+// Rotate
 void		ft_rotate(t_stacks *stacks, char ch);
-void		ft_rotate_a(t_stacks *stacks, t_stack *head_a, int print);
-void		ft_rotate_b(t_stacks *stacks, t_stack *head_b, int print);
 
-// Moves Rev Rotate
+// Rev Rotate
 void		ft_rev_rotate(t_stacks *stacks, char ch);
-void		ft_rev_rotate_a(t_stacks *stacks, t_stack *head_a, int print);
-void		ft_rev_rotate_b(t_stacks *stacks, t_stack *head_b, int print);
+void		ft_rev_rotate_a(t_stacks *stacks, t_stack_a *head_a, int print);
+void		ft_rev_rotate_b(t_stacks *stacks, t_stack_b *head_b, int print);
 
-// Move best
-void		ft_move_best(t_stacks *stacks);
-void		ft_check_moves(t_stacks *stacks);
-void		ft_update_stack_limits(t_stacks *stacks);
-void		ft_run_moves(t_stacks *stacks);
+// Move Cheapest
+void		ft_move_a_to_b(t_stacks *stacks);
+void		ft_find_best_sequence(t_stacks *stacks);
 
-// Find best
+// Find Cheapest
 void		ft_update_stack_limits(t_stacks *stacks);
-int			ft_find_index(t_stacks *stacks, int num);
-void		ft_calc_moves_to_top(t_stacks *stacks, t_stack *head_a, int i);
-void		ft_calc_move_new_num(t_stacks *stacks, int num);
-int			ft_find_destination(t_stacks *stacks, int num);
-void		ft_double_moves(t_stacks *stacks);
-void		ft_check_cost(t_stacks *stacks, int i);
+int			ft_find_index_b(t_stacks *stacks, int nbr);
+void		ft_calc_to_top(t_stacks *stacks, t_stack_a *head_a, int i);
+void		ft_place_element_b(t_stacks *stacks, int num);
+int			ft_search_num_b(t_stacks *stacks, int nbr);
 
 // Move Back to Stack A
-void		move_stack_a(t_stacks *stacks);
-int			find_index_stack_a(t_stacks *stacks, int num);
-int			search_stack_a(t_stacks *stacks, int num);
+void		ft_best_b_to_a(t_stacks *stacks);
+int			ft_find_index_stack_a(t_stacks *stacks, int nbr);
+int			ft_find_next_highest_in_a(t_stacks *stacks, int nbr);
 void		put_in_order(t_stacks *stacks);
-void		ft_rotate_min_a(t_stacks *stacks);
-void		ft_rotate_max_a(t_stacks *stacks);
-void		ft_move_top_a(t_stacks *stacks, t_stack *head_b);
-void		do_moves_min_stack_a(t_stacks *stacks);
-void		do_moves_max_stack_a(t_stacks *stacks);
-void		do_moves_elem_stack_a(t_stacks *stacks);
-void		do_moves_order(t_stacks *stacks);
+void		ft_calc_min_to_top(t_stacks *stacks);
+void		ft_calc_max_to_top(t_stacks *stacks);
+void		ft_place_element_a(t_stacks *stacks, t_stack_b *head_b);
 
-// Check Max & Min
-void		ft_check_max_min_b(t_stacks *stacks);
-void		ft_check_max_b(t_stacks *stacks, t_stack *head_b);
-void		ft_check_min_b(t_stacks *stacks, t_stack *head_b);
-void		ft_check_max_min_a(t_stacks *stacks);
-void		ft_check_max_a(t_stacks *stacks, t_stack *head_a);
-void		ft_check_min_a(t_stacks *stacks, t_stack *head_a);
+// Check Max & Min B
+void		ft_check_limits_b(t_stacks *stacks);
 
-// Print
+// Check Max & Min A
+void		ft_check_limits_a(t_stacks *stacks);
+
+// Stacks
+void		ft_free_stacks(t_stacks *stacks);
+void		ft_initialize_stacks(t_stacks *stacks, int argc, char **argv);
+
+// Libft
+bool	ft_is_space(char c);
+bool	ft_is_digit(char c);
+void	ft_putstr(const char *str);
+int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
+long long	ft_atoll(const char *str);
+bool	ft_is_space(char c);
+bool	ft_fits_in_int(char *str);
+bool	ft_is_digit(char c);
+bool	ft_is_integer(char *str);
+void	ft_check_sign(const char *str, int *i, bool *is_negative);
+
 void		ft_error(void);
+void		ft_skip_whitespace(const char *str, int *i);
+long long	ft_str_to_ll(const char *str, int *index, bool *is_negative);
+bool		ft_check_overflow(long long result, char current_char, bool is_negative);
 
-// Free
-void		ft_free(t_stacks *stacks);
+// Memory
+void	*ft_calloc(size_t count, size_t size);
+bool	ft_initialize_resources(t_stacks *stacks);
+size_t	ft_strlen(const char *s);
+void	ft_clearnodes(t_stack_a **lst); // change to stack
 
-int			ft_isdigit(int c);
-int			ft_atoi(const char *str);
-long		ft_atol(const char *str);
-
-void		*ft_memset(void *str, int c, size_t len);
-void		*ft_calloc(size_t count, size_t size);
-bool		ft_is_space(char c);
-bool		ft_is_digit(char c);
-void		ft_putstr(const char *str);
-void		*ft_calloc(size_t count, size_t size);
-void		ft_bzero(void *str, size_t len);
-size_t		ft_strlen(const char *s);
 
 #endif

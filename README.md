@@ -1,46 +1,51 @@
-<h1 align=center>
-  42 Cursus
- </h1>
-<h2 align=center>
-  push_swap
-</h2>
-<h2 align=center>
+# Push_swap
+### Because Swap_push isn’t as natural
 
-  ![push_swap Logo](https://github.com/beatrizdile/beatrizdile-utils/blob/master/push_swapm.png)
-</h2>
+# Push_swap Project Requirements
 
-Push_swap is a sorting algorithm project that aims to sort a stack of integers using a limited set of operations while minimizing the number of moves. The goal is to implement two programs: one that checks if a given list of instructions sorts the stack, and another that generates the list of instructions to sort the stack.
+## Objective:
+- Develop a C program named `push_swap` that sorts numbers using two stacks with the minimum number of operations.
 
-## Description
+## Program Requirements:
+- The program should accept a list of integers as arguments, representing stack `a` with the first argument at the top.
+- Outputs the sequence of actions to sort the stack, with each action followed by a newline.
 
-The push_swap program uses a sorting algorithm that involves manipulating two stacks, commonly referred to as Stack A and Stack B. The algorithm follows a combination of operations like pushing, rotating, reverse rotating, and swapping elements between the two stacks to sort the numbers. To do this project, I've implemented the [Turk Algorithm](https://medium.com/@ayogun/push-swap-c1f5d2d41e97), an optimization algorithm created by Ali Yigit Ogun: a student from 42 Heilbronn school.
+## Stack Operations:
+- `sa` (swap a): Swap the first two elements of stack `a`.
+- `sb` (swap b): Swap the first two elements of stack `b`.
+- `ss`: Execute `sa` and `sb` simultaneously.
+- `pa` (push a): Move the top element from stack `b` to stack `a`.
+- `pb` (push b): Move the top element from stack `a` to stack `b`.
+- `ra` (rotate a): Move the first element of stack `a` to the bottom.
+- `rb` (rotate b): Move the first element of stack `b` to the bottom.
+- `rr`: Execute `ra` and `rb` simultaneously.
+- `rra` (reverse rotate a): Move the last element of stack `a` to the top.
+- `rrb` (reverse rotate b): Move the last element of stack `b` to the top.
+- `rrr`: Execute `rra` and `rrb` simultaneously.
 
-## Installation
+## Code and Project Constraints:
+- Must be implemented in C.
+- No global variables.
+- Graceful error handling with "Error" message output for any issues.
+- No memory leaks; all heap allocated memory must be freed.
+- A Makefile with the rules: `$(NAME)`, `all`, `clean`, `fclean`, `re`.
+- Bonus parts should be in separate files and must not interfere with the mandatory part.
 
-Follow the steps below to test the project: 
+## Performance:
+- The number of operations used for sorting is critical; there's a maximum threshold.
+- Zero score for incorrect sorting or if the operation count exceeds the maximum allowed.
 
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/push_swap.git
-```
-2. Compile the project:
-```bash
-make
-```
-3. Run the program with the following syntax:
-```bash
-./push_swap num1 num2 num3 num4 num5
-```
-- **num**: unique numbers in a non-ascending order.
+## Bonus:
+- A `checker` program to validate the instructions from `push_swap` is a bonus task.
+- The bonus is only assessed if the mandatory part is flawlessly completed.
 
-### Examples
-```bash
-./push_swap 8 5 2 4 9 1 3
-```
+## Submission:
+- Work must be submitted via the assigned Git repository. Evaluation is based solely on the repository content.
 
-## Visualizer
+## External Functions Allowed:
+- `read`, `write`, `malloc`, `free`, `exit`
+- Self-coded `ft_printf` or its equivalent.
+- Use of `libft` is permitted.
 
-To better understand the algorithm and operations done in the push_swap project you can download a GUI to experience a visual demonstration.
-
-- [push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer)
-- [push_swap_gui](https://github.com/elijahkash/push_swap_gui)
+## Testing
+https://github.com/gemartin99/Push-Swap-Tester

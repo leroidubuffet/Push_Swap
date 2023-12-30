@@ -1,10 +1,10 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Iinclude -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Iinclude -Wunused-function -Wextra -Werror -g -fsanitize=address
 DEPFLAGS = -MMD -MP
 
 # Source and object directories
-SRC_DIR = src
+SRC_DIR = srcs
 INCLUDE_DIR = include
 OBJ_DIR = obj
 BIN_DIR = bin
@@ -33,9 +33,24 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile
 # Include dependency files
 -include $(DEPS)
 
+test: re
+	rm push_swap
+	mv bin/push_swap .
+	bash push_swap_test.sh
+
+# Assuming 're' is a rule that rebuilds everything
+# If it's not, replace 're' with the appropriate rule
+
 # Clean rule
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR) $(DEPS)
 
+# Full clean (clean + remove binary)
+fclean: clean
+	rm -f $(TARGET)
+
+# Rebuild (full clean + all)
+re: fclean all
+
 # Mark 'all' and 'clean' as phony so make doesn't look for files named 'all' and 'clean'
-.PHONY: all clean
+.PHONY: all clean fclean re test
