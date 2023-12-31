@@ -6,7 +6,7 @@
 /*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:53:24 by ybolivar          #+#    #+#             */
-/*   Updated: 2023/12/30 18:46:54 by airyago          ###   ########.fr       */
+/*   Updated: 2023/12/31 11:53:00 by airyago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	ft_find_index_stack_a(t_stacks *stacks, int nbr)
 	{
 		if (current_node->content == nbr)
 			return (index);
-		current_node = current_node->next,
+		current_node = current_node->next;
 		index++;
 	}
 	return (-1);
