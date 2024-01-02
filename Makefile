@@ -7,7 +7,7 @@ DEPFLAGS = -MMD -MP
 SRC_DIR = srcs
 INCLUDE_DIR = include
 OBJ_DIR = obj
-BIN_DIR = bin 
+BIN_DIR = bin
 
 # Automatically detect source files and corresponding object files
 SRCS = $(wildcard $(SRC_DIR)/*.c)
