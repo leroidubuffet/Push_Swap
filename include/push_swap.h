@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*																									 */
-/*																		:::		::::::::	*/
-/*	push_swap.h										:+:		:+:	 :+:	*/
-/*													+:+ +:+		+:+	  */
-/*	By: airyago <airyago@student.42.fr>			+#+  +:+		 +#+		*/
-/*												+#+#+#+#+#+	+#+		  */
-/*	Created: 2023/05/01 11:12:03 by ybolivar		 #+#	 #+#			 */
-/*	Updated: 2023/12/31 11:48:44 by airyago		 ###	########.fr		 */
-/*																			*/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/02 15:21:48 by airyago           #+#    #+#             */
+/*   Updated: 2024/01/02 15:22:17 by airyago          ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
@@ -24,27 +24,27 @@
 // ---------------------------
 // Type Definitions
 // ---------------------------
-typedef struct	s_stack_a
+typedef struct s_stack_a
 {
 	int					content;
 	struct s_stack_a	*next;
-} 				t_stack_a;
+}	t_stack_a;
 
-typedef struct	s_stack_b
+typedef struct s_stack_b
 {
 	int					content;
 	struct s_stack_b	*next;
-}				t_stack_b;
+}	t_stack_b;
 
-typedef struct	s_limits
+typedef struct s_limits
 {
 	int					max_a;
 	int					min_a;
 	int					max_b;
 	int					min_b;
-} t_limits;
+}	t_limits;
 
-typedef struct	s_moves
+typedef struct s_moves
 {
 	int					cost;
 	int					sa;
@@ -58,9 +58,9 @@ typedef struct	s_moves
 	int					rra;
 	int					rrb;
 	int					rrr;
-} t_moves;
+}	t_moves;
 
-typedef struct	s_best
+typedef struct s_best
 {
 	int					cost;
 	int					sa;
@@ -74,16 +74,16 @@ typedef struct	s_best
 	int					rra;
 	int					rrb;
 	int					rrr;
-}						t_best;
+}	t_best;
 
-typedef struct	s_stacks
+typedef struct s_stacks
 {
 	struct s_stack_a	*head_a;
 	struct s_stack_b	*head_b;
 	struct s_limits		*values;
 	struct s_moves		*moves;
 	struct s_best		*best;
-} t_stacks;
+}	t_stacks;
 
 // ---------------------------
 // Error Handling
@@ -107,7 +107,8 @@ bool		ft_fits_in_int(char *str);
 void		ft_check_sign(const char *str, int *i, bool *is_negative);
 void		ft_skip_whitespace(const char *str, int *i);
 long long	ft_str_to_ll(const char *str, int *index, bool *is_negative);
-bool		ft_check_overflow(long long result, char current_char, bool is_negative);
+bool		ft_check_overflow(long long result, char current_char,
+				bool is_negative);
 
 // ---------------------------
 // Memory Management
@@ -145,7 +146,8 @@ void		ft_sort(t_stacks *stacks);
 void		ft_sort_two(t_stacks *stacks);
 void		ft_sort_three(t_stacks *stacks, bool clear);
 void		ft_sort_four(t_stacks *stacks);
-void		ft_execute_moves_three(t_stacks *stacks, int num1, int num2, int num3);
+void		ft_execute_moves_three(t_stacks *stacks, int num1,
+				int num2, int num3);
 
 // ---------------------------
 // Stack Operations - Push
