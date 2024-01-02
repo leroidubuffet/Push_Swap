@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   linked_list_a.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ybolivar <ybolivar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:57:07 by ybolivar          #+#    #+#             */
-/*   Updated: 2024/01/02 11:41:44 by airyago          ###   ########.fr       */
+/*   Updated: 2024/01/02 18:54:05 by ybolivar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,16 @@ t_stack_a	*ft_create_list(int argc, char **argv)
 	int			i;
 	t_stack_a	*head_a;
 	t_stack_a	*tmp;
+	char		*tmp2;
 
 	i = 1;
 	head_a = ft_newnode_a(ft_atoi(argv[i]));
 	tmp = head_a;
+	tmp2 = *ft_split(*argv, ' ');
+	printf("tmp2: %s\n", tmp2);
 	while (++i < argc)
 	{
-		tmp->next = ft_newnode_a(ft_atoi(argv[i]));
+		tmp->next = ft_newnode_a(ft_atoi(&tmp2[i]));
 		tmp = tmp->next;
 		tmp->next = NULL;
 	}

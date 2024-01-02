@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: airyago <airyago@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ybolivar <ybolivar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:21:48 by airyago           #+#    #+#             */
-/*   Updated: 2024/01/02 15:22:17 by airyago          ###   ########.fr       */
+/*   Updated: 2024/01/02 18:53:28 by ybolivar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <unistd.h>
+# include <stdio.h> 
 
 // ---------------------------
 // Type Definitions
@@ -99,7 +100,6 @@ void		ft_putstr(const char *str);
 int			ft_atoi(const char *str);
 long		ft_atol(const char *str);
 long long	ft_atoll(const char *str);
-size_t		ft_strlen(const char *s);
 bool		ft_is_space(char c);
 bool		ft_is_digit(char c);
 bool		ft_is_integer(char *str);
@@ -198,5 +198,12 @@ void		ft_place_element_a(t_stacks *stacks, t_stack_b *head_b);
 // ---------------------------
 void		ft_check_limits_b(t_stacks *stacks);
 void		ft_check_limits_a(t_stacks *stacks);
+
+
+char		**ft_split(char const *s, char c);
+// char static	*ft_instr(char const *s, char c);
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
+// void static	ft_freelst(char **lst, int n);
+// int static	ft_cntwrd(char const *s, char c);
 
 #endif

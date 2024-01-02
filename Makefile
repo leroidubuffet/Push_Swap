@@ -1,6 +1,7 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Iinclude -Wunused-function -Wextra -Werror -g -fsanitize=address
+# CFLAGS = -Wall -Iinclude -Wunused-function -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Iinclude -Wextra -Werror -g -fsanitize=address
 DEPFLAGS = -MMD -MP
 
 # Source and object directories
