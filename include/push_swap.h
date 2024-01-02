@@ -24,6 +24,19 @@
 // ---------------------------
 // Type Definitions
 // ---------------------------
+typedef enum	e_stack_type
+{
+	STACK_A,
+	STACK_B
+}				t_stack_type;
+
+typedef struct	s_stack
+{
+	int				content;
+	struct s_stack	*next;
+	t_stack_type	type;
+}				t_stack;
+
 typedef struct	s_stack_a
 {
 	int					content;
