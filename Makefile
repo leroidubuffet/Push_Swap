@@ -7,7 +7,7 @@ DEPFLAGS = -MMD -MP
 SRC_DIR = srcs
 INCLUDE_DIR = include
 OBJ_DIR = obj
-BIN_DIR = bin
+BIN_DIR = bin 
 
 # Automatically detect source files and corresponding object files
 SRCS = $(wildcard $(SRC_DIR)/*.c)
@@ -34,9 +34,9 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile
 -include $(DEPS)
 
 test: re
-	rm push_swap
-	mv bin/push_swap .
-	bash push_swap_test.sh
+	@test -f push_swap && rm push_swap || true
+	@mv bin/push_swap .
+	@bash push_swap_test.sh
 
 # Assuming 're' is a rule that rebuilds everything
 # If it's not, replace 're' with the appropriate rule
