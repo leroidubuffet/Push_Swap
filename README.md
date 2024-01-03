@@ -47,13 +47,16 @@
 - Self-coded `ft_printf` or its equivalent.
 - Use of `libft` is permitted.
 
-## Testing
-I have leaned myself in the works of a fellow student, who developed a wonderful tool.
-https://github.com/gemartin99/Push-Swap-Tester
-
 ## Lessons learned
 - Start testing earlier. I have lost several days of work because my tests were weak and did not find some major bugs
 - git branching. Branch early and branch often has proved as good advice as it seems
-- gi bisect. I did not know git had so many helpful features
-- using static when developing new functions is great to speed up things
+- `git bisect`. I did not know git had so many helpful features
+- using `static` when developing new functions is great to speed up things
 - Makefile can hold rules for your testing workflow as well
+- Bash ans zsh do not handle strings in quotes equally. Using ARG in zsh will turn out as invalid input.
+
+## Testing
+I have leaned in the works of gemartin99 a fellow student who developed a wonderful [tool](https://github.com/gemartin99/Push-Swap-Tester). I have some randomly generated numbers and the tester in /tests.
+Makefile has a test rule that will move the push_swap binary file and run push_swap_test.sh. Both need to be in the root directory of he project.
+small_stack_utils.sh generates series of numbers and gives the to push_swap as an argument.
+
