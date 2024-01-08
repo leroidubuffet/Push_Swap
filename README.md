@@ -54,6 +54,9 @@
 - using `static` when developing new functions is great to speed up things
 - Makefile can hold rules for your testing workflow as well
 - Bash ans zsh do not handle strings in quotes equally. Using ARG in zsh will turn out as invalid input.
+- [Rob Pike’s 5 rules of programming](https://doc.cat-v.org/bell_labs/pikestyle). Particularly, rule 5:
+
+    *Rule 5.  Data dominates.  If you've chosen the right data structures and organized things well, the algorithms will almost always be self-evident.  Data structures, not algorithms, are central to programming.*
 
 ## Testing
 I have leaned in the works of gemartin99 a fellow student who developed a wonderful [tool](https://github.com/gemartin99/Push-Swap-Tester). I have some randomly generated numbers and the tester in /tests.
